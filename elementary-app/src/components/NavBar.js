@@ -1,6 +1,9 @@
 import React from 'react';
 import '../components/NavBar.css'; // Import your CSS file
 import Logo from '../assets/images/elementary-red-logo.png';
+import { Link } from 'react-router-dom';
+import SignUp from '../pages/SignUp';
+
 
 const NavBar = () => {
     return (
@@ -16,7 +19,7 @@ const NavBar = () => {
                     <li><a id="support-navbar" href="../pages/home-page.html">support</a></li>
                     <li><a id="about-navbar" href="../pages/home-page.html">about</a></li>
                     <li class="right-links">
-                        <a href="../pages/sign-up.html" class="signup-button">sign up</a>
+                        <Link to="/SignUp.js">sign up</Link>
                         <a href="../pages/login.html" class="signin-button">sign in</a>
                     </li>
                 </ul>
