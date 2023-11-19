@@ -1,11 +1,11 @@
 import React from 'react';
-import '../assets/images/css/HomePage.css'; // Import your CSS file
+import '../assets/css/homePage.css'; // Import your CSS file
 
 const HomePage = () => {
   return (
     <div>
       {<body>
-    <div w3-include-html="navbar.html"></div>
+    <div w3-include-html="NavBar.html"></div>
 
 {/* <!-------------------------1/3 SECTION start-------------------------> */}
 <div class="openingText-container">
@@ -37,6 +37,7 @@ const HomePage = () => {
     <p class="elements-inner-text1">elements</p>
     <p class="elements-inner-text2">what are we making?</p>
 </div>
+
 <div class="firstContainer-elements-grid">
     <div class="element-container">
         <div class="element-boxHolder">
@@ -92,13 +93,14 @@ const HomePage = () => {
             </div>
             <p class="shape-label">table</p>
         </div>
-        
-        
-
     </div>
-    
 </div>
-<p class="see-more-text"> see more &rarr;</p>
+
+<div class="see-more-text">
+    <p class="see-more-text"> see more &rarr;</p>
+</div>
+
+
 
 {/* <!------------------------- 2/3 SECTION end-------------------------> */}
 
