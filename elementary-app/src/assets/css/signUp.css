@@ -1,19 +1,19 @@
 
 
 body{ 
-    
-    background-image: '../assets/images/login-background-image.png';
-    background-repeat: no-repeat;
-    background-attachment: fixed;  
-    background-size: cover;
     display: flex;
-    justify-content: center;
     padding: 0;
     margin: 0;
     height: 100%;
     min-height: 100vh;
     overflow-x: hidden; 
     overflow-y: hidden;
+}
+
+.background{
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
 }
 
 .sign-up-parent-container{
@@ -218,6 +218,14 @@ button{
     padding-top: 30px;
     padding-bottom: 15px;
 
+}
+
+.sign-up-connect-with-parent-container{
+    margin: 15px;
+}
+
+.sign-up-connect-with-child-container{
+    margin-top: 10px;
 }
 
 .sign-up-connect-with-holder-icons{
