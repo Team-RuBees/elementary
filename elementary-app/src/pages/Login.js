@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
-import SignUp from '../pages/SignUp';
+import React from 'react';
+import { Link } from 'react-router-dom'; 
 import '../assets/css/login.css'; // Import your CSS file
 import rubeesLogo from '../assets/images/rubees-logo.png';
 import elementaryLogo from '../assets/images/elementary-logo.png';
@@ -72,7 +72,7 @@ const Login = () => {
 
                             <div class="sign-up-holder">
                                 <span class="no-account-text">Don't have an account?</span>
-                                <a href="./pages/SignUp" class="sign-up-text">Sign up</a>
+                                <Link to="/signup" class="sign-up-text">Sign up</Link>
                             </div>
 
                         </div>
