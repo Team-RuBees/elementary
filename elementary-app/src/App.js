@@ -3,16 +3,14 @@ import NavBar from './components/NavBar';
 import Home from './pages/HomePage';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-import Footer from './components/Footer';
-
 
 
 function App() {
   return (
-    <div>
+    <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route index element = {<SignUp/>} />
+          <Route path="/" element={<Navigate to="/signup" />} />
           <Route path="/home" element = {<Home/>} />
           <Route path="/login" element = {<Login/>} />
           <Route path="/signup" element = {<SignUp/>} />

@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import '../assets/css/login.css'; // Import your CSS file
 import rubeesLogo from '../assets/images/rubees-logo.png';
 import elementaryLogo from '../assets/images/elementary-logo.png';
-
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -40,18 +42,18 @@ const Login = () => {
                                 <b>Sign In</b>
                             </div>
 
-                            <form>
-                                <div className="form__group field">
-                                    <input type="input" className="form__field" placeholder="Email" email="email" id='email' required />
-                                    <label for="email" className="form__label">Email</label>
+                            <form action='POST'>
+                                <div class="form__group field">
+                                    <input type="email"  class="form__field" placeholder="Email" id='email' required />
+                                    <label for="email" class="form__label">Email</label>
                                 </div>
                 
-                                <div className="form__group field">
-                                    <input type="input" className="form__field" placeholder="Password" password="password" id='password' required />
-                                    <label for="password" className="form__label">Password</label>
+                                <div class="form__group field">
+                                    <input type="password"  class="form__field" placeholder="Password"  id='password' required />
+                                    <label for="password" class="form__label">Password</label>
                                 </div>               
-                
-                                <button className="login-button login-button-bg">Continue</button>
+                            
+                                <button class="login-button login-button-bg">Continue</button>
                             </form> 
 
                             <div className="login-connect-with-holder">

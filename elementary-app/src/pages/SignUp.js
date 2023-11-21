@@ -1,13 +1,43 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; 
+import React, {useState} from 'react';
 import '../assets/css/signUp.css'; // Import your CSS file
 import rubeesLogo from '../assets/images/rubees-logo.png';
 import elementaryLogo from '../assets/images/elementary-logo.png';
+import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
+function SignUp(){
+    const History = useNavigate();
+
+    const [name, setName]=useState('')
+    const [email, setEmail]=useState('')
+    const [password, setPassword]=useState('')
+
+    async function submit(e){
+        e.preventDefault();
+
+        try {
+
+            await axios.post("http://localhost:8000/signup", {
+                name, email, password
+            })
+            .then(res=>{
+                if(res.data == "Email already used"){
+                    alert("User already exist")
+                } else if(res.data == "Welcome!"){
+                    History ("/home",{state:{id:email}})
+
+                }
+            })
+        }
+        
+        catch (e){
+            console.log(e);
+        }
+    }
+
   return (
     <div>
-        <div className="body background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
+        <div className="background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
 
 
             <div className="sign-up-parent-container">
@@ -41,21 +71,21 @@ const SignUp = () => {
         
                                 <form>
                                     <div className="form__group field">
-                                        <input type="input" className="form__field" placeholder="Name" name="name" id='name' required />
-                                        <label for="name" className="form__label">Name</label>
+                                        <input type="input" onChange={(e)=>{setName(e.target.value)}} className="form__field" placeholder="Name" id='name' required />
+                                        <label htmlFor="name" className="form__label">Name</label>
                                     </div>
         
                                     <div className="form__group field">
-                                        <input type="input" className="form__field" placeholder="Email" email="email" id='email' required />
-                                        <label for="email" className="form__label">Email</label>
+                                        <input type="input" onChange={(e)=>{setEmail(e.target.value)}} className="form__field" placeholder="Email" id='email' required  />
+                                        <label htmlFor="email" className="form__label">Email</label>
                                     </div>
                     
                                     <div className="form__group field">
-                                        <input type="input" className="form__field" placeholder="Password" password="password" id='password' required />
-                                        <label for="password" className="form__label">Password</label>
+                                        <input type="input" onChange={(e)=>{setPassword(e.target.value)}} className="form__field" placeholder="Password"  id='password' required  />
+                                        <label htmlFor="password" className="form__label">Password</label>
                                     </div>               
                     
-                                    <button className="sign-up-button sign-up-button-bg">Continue</button>
+                                    <button className="sign-up-button sign-up-button-bg" onClick={submit} >Continue</button>
                                 </form> 
 
                                 <div className="sign-up-connect-with-holder">
@@ -88,6 +118,6 @@ const SignUp = () => {
 
     </div>
   );
-};
-
+  }
 export default SignUp;
+  
