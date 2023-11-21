@@ -1,11 +1,12 @@
 import React from 'react';
 import '../assets/css/homePage.css'; // Import your CSS file
+import NavBar from '../components/NavBar'; // Import your NavBar component
 
 const HomePage = () => {
   return (
     <div>
       {<body>
-    <div w3-include-html="NavBar.html"></div>
+        <NavBar />
 
 {/* <!-------------------------1/3 SECTION start-------------------------> */}
 <div class="openingText-container">
