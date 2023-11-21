@@ -8,20 +8,19 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Changed height to min-height */
     background-color: #f0f0f0;
+    justify-content: center;
 }
 
 /* START-- ui made simple section */
 .rectangle-container {
     position: relative;
-    width: 1200px;
+    width: 80%;
     height: 350px;
     background: linear-gradient(to top left, rgb(51, 1, 1), #CE3636);
-    margin: 20px;
+    margin: 20px auto; 
     border-radius: 45px;
-    margin-bottom: 20px;
     padding-top: 30px;
 }
 
@@ -40,6 +39,9 @@ body {
 }
 
 .text-column2 {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Added justify-content: center */
     width: 50%;
     font-size: 13px;
     line-height: 18px;
@@ -93,15 +95,25 @@ body {
 
 /* START-- what are we making section */
 
+
 .elements-overviewText {
     display: grid;
-    width: 100%; 
-    grid-template-rows: 1fr 3fr; 
-    text-align: left; 
+    grid-template-rows: 1fr 3fr;
+    text-align: left;
     margin: 40px;
     margin-bottom: 20px;
     padding-top: 30px;
     height: 350px;
+}
+
+
+
+.what-text {
+    grid-template-rows: 1fr 1fr;
+    margin-top: 50px;
+    margin-left: 250px;
+
+    
 }
 
 .elements-inner-text1, .elements-inner-text2{
@@ -118,6 +130,8 @@ body {
 .elements-inner-text2{
     font-size: 25px;
     color: #CE3636;
+    margin: 0;
+
     position: relative;
 
 }
@@ -159,6 +173,8 @@ body {
     margin-bottom: 30px;
 }
 
+
+
 .element-boxHolder:hover {
     transform: scale(1.09);
 }
@@ -173,6 +189,7 @@ body {
     font-weight: 500;
 }
 .see-more-text{
+
     grid-template-rows: 1fr;
     display: grid;
     font-family: 'Nunito', sans-serif;    
@@ -180,13 +197,19 @@ body {
     color: gray;
     text-align: right;
     justify-content: right;
-    margin-right: 100px;
+    padding-right: 250px;
     width: 100%;
     
 }
-.see-more-text:hover{
+.see-more-text1:hover{
     cursor: pointer; 
+    word-spacing: 2px;
     color: #CC0E0E;
+    font-style: italic;
+}
+
+.text-themes{
+    margin-left: 250px;
 }
 
 
@@ -200,6 +223,9 @@ body {
     max-width: 1400px;
     margin: 50px auto;
     align-items: center;
+    justify-content: center;
+    grid-gap: 30px;
+
 }
 
 .theme1 {

@@ -5,8 +5,10 @@ import NavBar from '../components/NavBar'; // Import your NavBar component
 const HomePage = () => {
   return (
     <div>
+    <NavBar />
+
+        
       {<body>
-        <NavBar />
 
 {/* <!-------------------------1/3 SECTION start-------------------------> */}
 <div class="openingText-container">
@@ -24,6 +26,7 @@ const HomePage = () => {
         </div>
     </div>
 </div>
+
 {/* <!-------------------------1/3 SECTION end-------------------------> */}
 
 
@@ -33,13 +36,19 @@ const HomePage = () => {
     elements
     what are we making?
 --> */}
-<div class="elements-overviewText"/>
+<div>
 <div class="what-text">
-    <p class="elements-inner-text1">elements</p>
-    <p class="elements-inner-text2">what are we making?</p>
+        <div class="elements-inner-text1">elements</div>
+        <div class="elements-inner-text2">what are we making?</div>
 </div>
 
+</div>
+
+
+
+
 <div class="firstContainer-elements-grid">
+    
     <div class="element-container">
         <div class="element-boxHolder">
             <div class="box-content"></div>
@@ -98,7 +107,7 @@ const HomePage = () => {
 </div>
 
 <div class="see-more-text">
-    <p class="see-more-text"> see more &rarr;</p>
+    <div class="see-more-text1"> see more &rarr;</div>
 </div>
 
 
@@ -127,6 +136,7 @@ const HomePage = () => {
         </div>
     </div>
     
+    
 
 
 </div>
@@ -138,8 +148,10 @@ const HomePage = () => {
 
 
 
+
 </body>}
     </div>
+    
   );
 };
 
