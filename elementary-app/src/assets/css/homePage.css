@@ -15,34 +15,38 @@ body {
 
 /* START-- ui made simple section */
 .rectangle-container {
-    position: relative;
     width: 80%;
-    height: 350px;
+    height: auto; 
+    max-width: 1200px; 
+    margin: 20px auto;
     background: linear-gradient(to top left, rgb(51, 1, 1), #CE3636);
-    margin: 20px auto; 
     border-radius: 45px;
-    padding-top: 30px;
+    padding: 30px;
 }
 
 .elements-inside-shape {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr; 
-    height: 100%;
-    padding-left: 100px;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px; /* Added gap between grid items */
+    padding: 20px; /* Adjusted padding for responsiveness */
     align-items: center;
 }
 
 .text-column1 {
+    padding-left: 60px;
     font-size: 40px;
     color: white;
-    font-family: 'Nunito', sans-serif;    
+    font-family: 'Nunito', sans-serif;   
+
 }
 
 .text-column2 {
+    padding-left: 60px;
+
     display: flex;
     align-items: center;
     justify-content: center; /* Added justify-content: center */
-    width: 50%;
+    width: 60%;
     font-size: 13px;
     line-height: 18px;
     color: white;
@@ -53,6 +57,7 @@ body {
     color: white;
     text-align: center;
     margin: 0; 
+    
 }
 
 #typewriter-text {
@@ -70,6 +75,7 @@ body {
 }
 
 .button-column {
+    margin-left: 50px;
     display: flex;
     position: relative;
     align-items: center;
@@ -87,7 +93,7 @@ body {
 }
 
 .button-column:hover {
-    background-color: rgb(209, 209, 209); /* Set a slightly different color on hover */
+    background-color: rgb(209, 209, 209); 
 }
 
 
@@ -97,13 +103,13 @@ body {
 
 
 .elements-overviewText {
+    height: auto;
     display: grid;
     grid-template-rows: 1fr 3fr;
     text-align: left;
     margin: 40px;
     margin-bottom: 20px;
     padding-top: 30px;
-    height: 350px;
 }
 
 
@@ -257,6 +263,37 @@ body {
     height: 70px; 
     background-color: white;
     border-radius: 0 0 20px 20px; 
+}
+
+/* Responsive Styles using Media Queries */
+@media screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+
+    .rectangle-container {
+        padding: 20px;
+    }
+
+    .elements-inside-shape {
+        padding-left: 10px;
+    }
+
+    .text-column2 {
+        padding: 10px;
+    }
+
+    .button-column {
+        width: 100%;
+    }
+
+    .what-text {
+        margin-left: 10px;
+    }
+
+    .firstContainer-elements-grid,
+    .secondContainer-elements-grid,
+    .four-themes-skeleton {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 

@@ -1,6 +1,7 @@
 import React from 'react';
-import '../assets/css/homePage.css'; // Import your CSS file
-import NavBar from '../components/NavBar'; // Import your NavBar component
+import '../assets/css/homePage.css'; 
+import NavBar from '../components/NavBar'; 
+import Footer from '../components/Footer';
 
 const HomePage = () => {
   return (
@@ -150,7 +151,10 @@ const HomePage = () => {
 
 
 </body>}
+
+<Footer/>
     </div>
+
     
   );
 };
