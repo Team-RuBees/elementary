@@ -26,10 +26,12 @@ const NavBar = () => {
             </div>
         </nav>        
     </header>
+    
 
 
        
       </div>
+      
     );
   };
   
