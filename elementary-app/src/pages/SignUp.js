@@ -1,67 +1,98 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../assets/css/signUp.css'; // Import your CSS file
 import rubeesLogo from '../assets/images/rubees-logo.png';
 import elementaryLogo from '../assets/images/elementary-logo.png';
+import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
+function SignUp(){
+    const History = useNavigate();
+
+    const [name, setName]=useState('')
+    const [email, setEmail]=useState('')
+    const [password, setPassword]=useState('')
+
+    async function submit(e){
+        e.preventDefault();
+
+        try {
+
+            await axios.post("http://localhost:8000/signup", {
+                name, email, password
+            })
+            .then(res=>{
+                if(res.data == "Email already used"){
+                    alert("User already exist")
+                } else if(res.data == "Welcome!"){
+                    History ("/home",{state:{id:email}})
+
+                }
+            })
+        }
+        
+        catch (e){
+            console.log(e);
+        }
+    }
+
   return (
     <div>
-        <body class="background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
+        <div className="background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
 
 
-            <div class="sign-up-parent-container">
+            <div className="sign-up-parent-container">
         
-                <div class="sign-up-child-container-rubees-logo-row">
-                    <div class="rubees-logo-holder">
+                <div className="sign-up-child-container-rubees-logo-row">
+                    <div className="rubees-logo-holder">
                         <img src={rubeesLogo} width="40px" alt="Rubees logo"/>
-                        <span class="rubees-text-holder">rubees</span>
+                        <span className="rubees-text-holder">rubees</span>
                     </div>
                 </div>
         
-                <div class="sign-up-child-container">
+                <div className="sign-up-child-container">
         
-                    <div class="sign-up-child-container-two-columns">
-                        <div class="sign-up-child-container-first-column">
-                            <div class="elementary-logo-holder">
+                    <div className="sign-up-child-container-two-columns">
+                        <div className="sign-up-child-container-first-column">
+                            <div className="elementary-logo-holder">
                                 <img src={elementaryLogo} width="300px" alt="Elementary logo"/>
-                                <p class="elementary-text-holder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                <p className="elementary-text-holder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                     Praesent tincidunt leo nisl, et varius justo tincidunt eget. 
                                     Pellentesque at sodales orci.
                                 </p>
                             </div>
                         </div>
             
-                        <div class="sign-up-child-container-second-column">
+                        <div className="sign-up-child-container-second-column">
         
-                            <div class="form-holder">   
-                                <div class="sign-up-text-holder">
+                            <div className="form-holder">   
+                                <div className="sign-up-text-holder">
                                     <b>Sign Up</b>
                                 </div>
         
                                 <form>
-                                    <div class="form__group field">
-                                        <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                        <label for="name" class="form__label">Name</label>
+                                    <div className="form__group field">
+                                        <input type="input" onChange={(e)=>{setName(e.target.value)}} className="form__field" placeholder="Name" id='name' required />
+                                        <label htmlFor="name" className="form__label">Name</label>
                                     </div>
         
-                                    <div class="form__group field">
-                                        <input type="input" class="form__field" placeholder="Email" email="email" id='email' required />
-                                        <label for="email" class="form__label">Email</label>
+                                    <div className="form__group field">
+                                        <input type="input" onChange={(e)=>{setEmail(e.target.value)}} className="form__field" placeholder="Email" id='email' required  />
+                                        <label htmlFor="email" className="form__label">Email</label>
                                     </div>
                     
-                                    <div class="form__group field">
-                                        <input type="input" class="form__field" placeholder="Password" password="password" id='password' required />
-                                        <label for="password" class="form__label">Password</label>
+                                    <div className="form__group field">
+                                        <input type="input" onChange={(e)=>{setPassword(e.target.value)}} className="form__field" placeholder="Password"  id='password' required  />
+                                        <label htmlFor="password" className="form__label">Password</label>
                                     </div>               
                     
-                                    <button class="sign-up-button sign-up-button-bg">Continue</button>
+                                    <button className="sign-up-button sign-up-button-bg" onClick={submit} >Continue</button>
                                 </form> 
 
-                                <div class="sign-up-connect-with-holder">
-                                    <span class="sign-up-connect-with-text">Or Connect with...</span>
+                                <div className="sign-up-connect-with-holder">
+                                    <span className="sign-up-connect-with-text">Or Connect with...</span>
                                 </div>
         
-                                <div class="sign-up-connect-with-holder-icons">
+                                <div className="sign-up-connect-with-holder-icons">
                                     <svg width="40" height="40" viewBox="0 0 87 87" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="43.5" cy="43.5" r="43.5" fill="#9b9b9b"/>
                                         <path d="M54.2699 36.0909V44.2727H31.8153V36.0909H54.2699ZM36.4972 71V34.3182C36.4972 31.6212 37.0047 29.3864 38.0199 27.6136C39.035 25.8258 40.4441 24.4924 42.2472 23.6136C44.0502 22.7197 46.1335 22.2727 48.4972 22.2727C50.0426 22.2727 51.4972 22.3939 52.8608 22.6364C54.2396 22.8636 55.2623 23.0682 55.929 23.25L54.1562 31.3864C53.7472 31.25 53.2472 31.1364 52.6562 31.0455C52.0805 30.9545 51.535 30.9091 51.0199 30.9091C49.7169 30.9091 48.8229 31.197 48.3381 31.7727C47.8532 32.3485 47.6108 33.1364 47.6108 34.1364V71H36.4972Z" fill="white"/>
@@ -73,9 +104,9 @@ const SignUp = () => {
                                     </svg>
                                 </div>
         
-                                <div class="sign-in-holder">
-                                    <span class="have-account-text">Already have an account?</span>
-                                    <a href="./pages/Login" class="sign-in-text">Sign-in</a>
+                                <div className="sign-in-holder">
+                                    <span className="have-account-text">Already have an account?</span>
+                                    <Link to="/login" className="sign-in-text">Sign-in</Link>
                                 </div>
         
                             </div>
@@ -83,10 +114,10 @@ const SignUp = () => {
                     </div> 
                 </div>     
             </div>
-        </body>
+        </div>
 
     </div>
   );
-};
-
+  }
 export default SignUp;
+  

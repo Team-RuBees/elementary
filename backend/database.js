@@ -24,6 +24,25 @@ const database = (module.exports = () => {
     
     database();
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+app.listen(27107, () => {
+    console.log("Server is running on port 27107");
   });
+
+  const newSchema = new mongoose.Schema({
+    name:{
+      type: String,
+      required: true
+    },
+    email:{
+      type: String,
+      required: true
+    },
+    password:{
+      type: String,
+      required: true
+    }
+  })
+
+  const collection = mongoose.model("collection", newSchema)
+
+  module.exports = collection

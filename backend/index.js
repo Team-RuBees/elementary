@@ -5,9 +5,13 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 5000;
-
 app.use(cors());
+
+const PORT = 4000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
 app.use(express.json());
 mongoose.set("strictQuery", false);
 const uri = process.env.ATLAS_URI;
@@ -21,7 +25,5 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
-
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
-});
+const router = require('.\backend\routers\router.js'); // Update the path accordingly
+app.use('/api/auth', router)
