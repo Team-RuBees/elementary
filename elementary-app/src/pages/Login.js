@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import '../assets/css/login.css'; // Import your CSS file
 import rubeesLogo from '../assets/images/rubees-logo.png';
 import elementaryLogo from '../assets/images/elementary-logo.png';
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import axios from 'axios';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 const Login = () => {
   return (
