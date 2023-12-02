@@ -9,7 +9,7 @@ import { useNavigate} from 'react-router-dom';
 
 const Login = () => {
   return (
-    <div>
+
         <div className="body background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
 
 
@@ -85,7 +85,6 @@ const Login = () => {
 
         </div>
 
-    </div>
   );
 };
 
