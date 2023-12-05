@@ -17,9 +17,7 @@ function App() {
           <Route path="/home" element = {<Home/>} />
           <Route path="/login" element = {<Login/>} />
           <Route path="/signup" element = {<SignUp/>} />
-          <Route path="/customize" element = {<CustomizePage/>}/>
-          <Route path="/customsidebar" element = {<CustomSideBar/>}/>
-          
+          <Route path="/generate" element = {<CustomizePage/>}/>
         </Routes>
       </BrowserRouter>
     </div>
