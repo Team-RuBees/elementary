@@ -21,9 +21,9 @@ function SignUp(){
                 name, email, password
             })
             .then(res=>{
-                if(res.data == "Email already used"){
+                if(res.data === "Email already used"){
                     alert("User already exist")
-                } else if(res.data == "Welcome!"){
+                } else if(res.data === "Welcome!"){
                     History ("/home",{state:{id:email}})
 
                 }

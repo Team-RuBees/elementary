@@ -3,11 +3,35 @@ import SignUp from '../pages/SignUp';
 import '../assets/css/login.css'; // Import your CSS file
 import rubeesLogo from '../assets/images/rubees-logo.png';
 import elementaryLogo from '../assets/images/elementary-logo.png';
-import React, {useEffect, useState} from 'react';
+import {useState} from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
-const Login = () => {
+function Login() {
+
+    const [email, userEmail]=useState('')
+    const [password, userPassword] = useState('')
+
+    const History = useNavigate();
+
+    async function submit(e){
+        e.preventDefault();
+
+        try {
+            const response = await axios.post("http://localhost:3000/login", {
+                email, password
+            });
+    
+            if (response.data === "User Confirmed") {
+                History("/home", { state: { id: email } });
+            } else if (response.data === "Email not registered") {
+                alert("Please sign up");
+            }
+        } catch (error) {
+            alert("Wrong Credentials");
+            console.log(error);
+        }
+    }
   return (
     <div>
         <body class="background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
@@ -43,17 +67,17 @@ const Login = () => {
                             </div>
 
                             <form action='POST'>
-                                <div class="form__group field">
-                                    <input type="email"  class="form__field" placeholder="Email" id='email' required />
-                                    <label for="email" class="form__label">Email</label>
+                                <div className="form__group field">
+                                    <input type="email"  className="form__field" onChange={(e)=>(userEmail(e.target.value))} placeholder="Email" id='email' required />
+                                    <label htmlFor="email" className="form__label">Email</label>
                                 </div>
                 
-                                <div class="form__group field">
-                                    <input type="password"  class="form__field" placeholder="Password"  id='password' required />
-                                    <label for="password" class="form__label">Password</label>
+                                <div className="form__group field">
+                                    <input type="password"  className="form__field" onChange={(e)=>(userPassword(e.target.value))} placeholder="Password"  id='password' required />
+                                    <label htmlFor="password" className="form__label">Password</label>
                                 </div>               
                             
-                                <button class="login-button login-button-bg">Continue</button>
+                                <button className="login-button login-button-bg" onClick={submit}>Continue</button>
                             </form> 
 
                             <div class="login-connect-with-holder">
