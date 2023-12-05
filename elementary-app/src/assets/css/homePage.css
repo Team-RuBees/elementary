@@ -265,6 +265,72 @@ body {
     border-radius: 0 0 20px 20px; 
 }
 
+.element-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.insides {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.textsInElement{
+    color: white;
+    font-size: smaller;
+
+}
+
+.element1 {
+    width: 55%;
+    margin-top: 40%;
+    height: 40px;
+    background: #F44040;
+    border-radius: 40px;
+    box-shadow: 9px 8px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.element2 {
+    width: 55%;
+    margin-top: 40%;
+    height: 40px;
+    background: #F44040;
+    border-radius: 40px;
+    box-shadow: 9px 8px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+}
+.offdesign{
+    width: 55px;
+    height: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 9px 8px 10px rgba(0, 0, 0, 0.1);
+    justify-content: right;
+
+}
+.element6{
+    width: 150px;
+    margin-top: 10%;
+    height: 30px;
+    background: #F44040;
+    border-radius: 40px;
+    box-shadow: 9px 8px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 /* Responsive Styles using Media Queries */
 @media screen and (max-width: 768px) {
     /* Adjust styles for smaller screens */

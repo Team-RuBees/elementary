@@ -52,14 +52,35 @@ const HomePage = () => {
     
     <div class="element-container">
         <div class="element-boxHolder">
-            <div class="box-content"></div>
+            <div class="box-content">
+                <div class="insides">
+                    <div class="element1">
+                        <div className="textsInElement">button
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <p class="shape-label">button</p>
     </div>
     
     <div class="element-container">
         <div class="element-boxHolder">
-            <div class="box-content"></div>
+            <div class="box-content">
+            <div class="insides">
+                    <div class="element2">
+                
+                        <div className="textsInElement">on
+                        
+                        </div>
+                        <div className="offdesign">
+                        
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
         <p class="shape-label">toggle</p>
     </div>
@@ -87,7 +108,14 @@ const HomePage = () => {
         
         <div class="element-container">
             <div class="element-boxHolder">
-                <div class="box-content"></div>
+                <div class="box-content">
+                <div class="insides">
+                    <div class="element6">
+                        <div className="textsInElement">navbar
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
             <p class="shape-label">navbar</p>
         </div>
