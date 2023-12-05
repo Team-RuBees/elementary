@@ -4,7 +4,6 @@ import '../assets/css/login.css'; // Import your CSS file
 import rubeesLogo from '../assets/images/rubees-logo.png';
 import elementaryLogo from '../assets/images/elementary-logo.png';
 
-
 const Login = () => {
   return (
     <div>
@@ -78,12 +77,13 @@ const Login = () => {
                             </div>
 
                         </div>
-                    </div>
 
+                    </div>
                 
                 </div>
 
             </div>
+
         </div>
 
     </div>
