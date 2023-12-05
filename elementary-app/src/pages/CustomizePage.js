@@ -3,10 +3,32 @@ import '../assets/css/customizePage.css';
 import NavBar from '../components/NavBar'; 
 import Footer from '../components/Footer';
 import '../components/CustomSideBar.css'; // Import your CSS file
+import { useState, useEffect } from 'react';
 
 
 
 const CustomizePage = () => {
+
+    const [buttonColor, setButtonColor] = useState('#808080'); //gray
+    const [textColor, setTextColor] = useState('#ffffff'); // white text
+    const [generatedHtml, setGeneratedHtml] = useState('');
+
+    useEffect(() => {
+        // Update the generated HTML 
+        const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; border-radius: 40px; font-size: 1rem;">button</button>`;
+        setGeneratedHtml(htmlCode);
+      }, [buttonColor, textColor]);
+
+    const handleButtonColorChange = (event) => {
+      // Update button color
+      setButtonColor(event.target.value);
+    };
+
+    const handleTextColorChange = (event) => {
+        // Update text color
+        setTextColor(event.target.value);
+      };
+
   return (
     
     <div>
@@ -34,7 +56,16 @@ const CustomizePage = () => {
 
         <div className="page_generator">
             <div className="preview_container">
-                <button className="btnPreview">button</button>
+                <button className="btnPreview" 
+                    style=
+                    {{
+                        color: textColor,
+                        background: buttonColor,
+                        border: '0 ' + 'solid',
+                        borderRadius: 40,
+                        fontSize: 1 + 'rem'
+                    }}
+                >button</button>
             </div>
             <div className="adjust">
                 <ul class="checkboxes">
@@ -51,18 +82,25 @@ const CustomizePage = () => {
                     <label for="borderRadiusSlider">border radius</label> <br/>
                     <input type="range" id="borderRadiusSlider" min="0" max="100" value="50"/>
 
-                    <label for="sizeSlider">color</label> <br/>
-                    <input type="range" id="sizeSlider" min="0" max="100" value="50"/>
+                    <label>text color</label> <br/>
+                    <input
+                        type="color"
+                        id="txtColorPicker"
+                        value={textColor} // change textColor state
+                        onChange={handleTextColorChange} // Update the buttonColor state on change
+                    /> 
 
                     <label for="colorSlider">color</label> <br/>
-                    <input type="range" id="colorSlider" min="0" max="360" step="1" value="0"/>
+                    <input
+                        type="color"
+                        id="btnColorPicker"
+                        value={buttonColor} // Use the dynamic buttonColor state
+                        onChange={handleButtonColorChange} // Update the buttonColor state on change
+                    />                
                 </div>
             </div>
             <div class="generatedCode-container">
-                <p/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt leo nisl, et varius 
-                <br/> <span id="pinkCode">justo tincidunt eget. Pellentesque at sodales orci. Suspendisse ut risus ut dolor maximus</span>
-                <br/> <span id="blueCode">consectetur in a massa. Integer ultricies cursus ex et pellentesque. Aliquam tellus risus,</span>
-                 <span id="yellowCode">hendrerit eu ex vel, semper sollicitudin metus.</span>
+                <p>{generatedHtml}</p>
             </div>
         </div>
     </div>

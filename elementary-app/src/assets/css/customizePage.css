@@ -45,9 +45,9 @@ body{
     border-radius: 64px;
     box-shadow: 0 0 24px 8px rgba(0, 0, 0, 0.16);
     flex: 1;
-    height: 25rem;
     margin-right: 10%;
-    margin-left: 2%
+    margin-left: 2%;
+    padding: 1rem;
 }
 .sidebar_frame {
     width: 250px;
@@ -102,11 +102,20 @@ label {
     color: #000000;
 }
 
-#textSizeSlider, #borderRadiusSlider, #sizeSlider, #colorSlider {
+#textSizeSlider, #borderRadiusSlider {
     width: 80%; /*to make it longer */
-    margin-left:  5%;
-    padding: 2%;
+    margin-left: 5%;
     display: block;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+#txtColorPicker, #btnColorPicker{
+    width: 40%;
+    height: 1.5rem;
+    margin-right: 100%;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
 }
 
 .generatedCode-container {
@@ -123,6 +132,8 @@ label {
     margin-bottom: 2%;
 }
 
+/*---------------- unused style ---------------*/
+
 #pinkCode {
     color: #FF68E7;
 }
@@ -134,6 +145,8 @@ label {
 #yellowCode {
     color: #FAFF00;
 }
+
+/* end of unused style */
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;700&display=swap');
 body {
