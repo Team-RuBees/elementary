@@ -11,19 +11,19 @@ const Login = () => {
         <div className="body background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
 
 
-        <div className="login-parent-container">
+            <div className="login-parent-container">
 
-            <div className="login-child-container-rubees-logo-row">
-                <div className="rubees-logo-holder">
-                    <img src={rubeesLogo} width="40px" alt="Rubees logo"/>
-                    <span className="rubees-text-holder">rubees</span>
-                </div>
-            </div>
+                <div className="login-parent-container-first-column">
 
-            <div className="login-child-container">
-
-                <div className="login-child-container-two-columns">
                     <div className="login-child-container-first-column">
+
+                        <div className="login-child-container-rubees-logo-row">
+                            <div className="rubees-logo-holder">
+                                <img src={rubeesLogo} width="40px" alt="Rubees logo"/>
+                                <span className="rubees-text-holder">rubees</span>
+                            </div>
+                        </div>
+
                         <div className="elementary-logo-holder">
                             <img src={elementaryLogo} width="300px" alt="Elementary logo"/>
                             <p className="elementary-text-holder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -32,9 +32,11 @@ const Login = () => {
                             </p>
                         </div>
                     </div>
+                </div>
+                
+                <div className="login-parent-container-second-column">
 
                     <div className="login-child-container-second-column">
-
                         <div className="form-holder">   
                             <div className="login-text-holder">
                                 <b>Sign In</b>
@@ -45,12 +47,12 @@ const Login = () => {
                                     <input type="input" className="form__field" placeholder="Email" email="email" id='email' required />
                                     <label for="email" className="form__label">Email</label>
                                 </div>
-                
+
                                 <div className="form__group field">
                                     <input type="input" className="form__field" placeholder="Password" password="password" id='password' required />
                                     <label for="password" className="form__label">Password</label>
                                 </div>               
-                
+
                                 <button className="login-button login-button-bg">Continue</button>
                             </form> 
 
@@ -77,10 +79,11 @@ const Login = () => {
 
                         </div>
                     </div>
-                </div> 
-            </div>     
-            </div>
 
+                
+                </div>
+
+            </div>
         </div>
 
     </div>
