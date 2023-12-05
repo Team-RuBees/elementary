@@ -33,7 +33,7 @@ function Login() {
         }
     }
   return (
-    <div>
+
         <div className="body background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
 
 
@@ -113,7 +113,6 @@ function Login() {
 
         </div>
 
-    </div>
   );
 };
 
