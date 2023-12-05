@@ -12,15 +12,20 @@ const NavBar = () => {
         <nav>
             <div id="NavBar">
                 <ul>
-                    <img src={Logo} alt="Logo" className="Logo"/>
-                    <li><Link to="/home" class="home">home</Link></li>
-                    <li><Link to="/home" class="home">generate</Link></li>
-                    <li><Link to="/home" class="home">support</Link></li>
-                    <li><Link to="/home" class="home">about</Link></li>
-                    <li class="right-links">
-                        <Link to="/signup">sign up</Link>
-                        <Link to="/login" class="signin-button">sign in</Link>
+                    <li class="nav-left-container">
+                        <img src={Logo} alt="Logo" className="Logo"/>
+                        <li><Link to="/home" class="home">home</Link></li>
+                        <li><Link to="/home" class="home">generate</Link></li>
+                        <li><Link to="/home" class="home">support</Link></li>
+                        <li><Link to="/home" class="home">about</Link></li>
                     </li>
+
+                    <li class="nav-right-container right-links">
+                        <li><Link to="/signup">sign up</Link></li>
+                        <li><Link to="/login" class="signin-button">sign in</Link></li>
+                    </li>
+
+                    
                 </ul>
                 
             </div>
