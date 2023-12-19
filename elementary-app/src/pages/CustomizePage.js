@@ -8,27 +8,31 @@ import { useState, useEffect } from 'react';
 
 
 const CustomizePage = () => {
-
-    const [buttonColor, setButtonColor] = useState('#808080'); //gray
+    const [buttonColor, setButtonColor] = useState('#808080'); // gray
     const [textColor, setTextColor] = useState('#ffffff'); // white text
     const [generatedHtml, setGeneratedHtml] = useState('');
-
+    const [isChecked, setChecked] = useState(false);
+  
     useEffect(() => {
-        // Update the generated HTML 
-        const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; border-radius: 40px; font-size: 1rem;">button</button>`;
-        setGeneratedHtml(htmlCode);
-      }, [buttonColor, textColor]);
-
+      // Update the generated HTML
+      const boxShadowStyle = isChecked ? 'box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);' : '';
+      const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; border-radius: 40px; font-size: 1rem; ${boxShadowStyle}">button</button>`;
+      setGeneratedHtml(htmlCode);
+    }, [buttonColor, textColor, isChecked]);
+  
     const handleButtonColorChange = (event) => {
       // Update button color
       setButtonColor(event.target.value);
     };
-
+  
     const handleTextColorChange = (event) => {
-        // Update text color
-        setTextColor(event.target.value);
-      };
-
+      // Update text color
+      setTextColor(event.target.value);
+    };
+  
+    const handleCheckboxChange = () => {
+      setChecked(!isChecked);
+    };
   return (
     
     <div>
@@ -63,13 +67,17 @@ const CustomizePage = () => {
                         background: buttonColor,
                         border: '0 ' + 'solid',
                         borderRadius: 40,
-                        fontSize: 1 + 'rem'
+                        fontSize: 1 + 'rem',
+                        //checkbox dropshadow
+                        boxShadow: isChecked ? '0 0 10px rgba(0, 0, 0, 0.5)' : 'none',
+                          
                     }}
                 >button</button>
             </div>
             <div className="adjust">
                 <ul class="checkboxes">
-                    <li><label><input type="checkbox" name="dropShadow"/> drop shadow</label></li>
+                    <li><label><input type="checkbox" checked={isChecked} onChange={handleCheckboxChange} 
+                    name="dropShadow"/> drop shadow</label></li>
                     <li><label><input type="checkbox" name="stroke"/> stroke</label></li>
                     <li><label><input type="checkbox" name="image"/> image</label></li>
                     <li><label><input type="checkbox" name="label"/> label</label></li>
