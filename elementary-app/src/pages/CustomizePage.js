@@ -12,13 +12,15 @@ const CustomizePage = () => {
     const [textColor, setTextColor] = useState('#ffffff'); // white text
     const [generatedHtml, setGeneratedHtml] = useState('');
     const [isChecked, setChecked] = useState(false);
+    const [textSize, setTextSize] = useState(16); 
+
   
     useEffect(() => {
       // Update the generated HTML
       const boxShadowStyle = isChecked ? 'box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);' : '';
-      const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; border-radius: 40px; font-size: 1rem; ${boxShadowStyle}">button</button>`;
+      const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; border-radius: 40px; font-size: ${textSize}px; ${boxShadowStyle}">button</button>`;
       setGeneratedHtml(htmlCode);
-    }, [buttonColor, textColor, isChecked]);
+    }, [buttonColor, textColor, isChecked, textSize]);
   
     const handleButtonColorChange = (event) => {
       // Update button color
@@ -29,7 +31,7 @@ const CustomizePage = () => {
       // Update text color
       setTextColor(event.target.value);
     };
-  
+    //checkbox status
     const handleCheckboxChange = () => {
       setChecked(!isChecked);
     };
@@ -65,9 +67,9 @@ const CustomizePage = () => {
                     {{
                         color: textColor,
                         background: buttonColor,
-                        border: '0 ' + 'solid',
+                        border: `0 solid`,
                         borderRadius: 40,
-                        fontSize: 1 + 'rem',
+                        fontSize: `${textSize}px`,
                         //checkbox dropshadow
                         boxShadow: isChecked ? '0 0 10px rgba(0, 0, 0, 0.5)' : 'none',
                           
@@ -85,7 +87,9 @@ const CustomizePage = () => {
                     
                 <div class="sliders">
                     <label for="textSizeSlider">text size</label> <br/>
-                    <input type="range" id="textSizeSlider" min="0" max="100" value="50"/>
+                    <input type="range" id="textSizeSlider" min="8"
+                    max="50" value={textSize}  onChange={(e) => setTextSize(e.target.value)}
+                    />
                         
                     <label for="borderRadiusSlider">border radius</label> <br/>
                     <input type="range" id="borderRadiusSlider" min="0" max="100" value="50"/>
