@@ -3,7 +3,7 @@ import '../assets/css/customizePage.css';
 import NavBar from '../components/NavBar'; 
 import Footer from '../components/Footer';
 import '../components/CustomSideBar.css'; // Import your CSS file
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 
 
@@ -12,24 +12,32 @@ const CustomizePage = () => {
     const [buttonColor, setButtonColor] = useState('#808080'); //gray
     const [textColor, setTextColor] = useState('#ffffff'); // white text
     const [generatedHtml, setGeneratedHtml] = useState('');
+    const buttonRef = useRef();
 
     useEffect(() => {
         // Update the generated HTML 
         const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; border-radius: 40px; font-size: 1rem;">button</button>`;
         setGeneratedHtml(htmlCode);
-      }, [buttonColor, textColor]);
+    }, [buttonColor, textColor]);
 
     const handleButtonColorChange = (event) => {
       // Update button color
-      setButtonColor(event.target.value);
+    setButtonColor(event.target.value);
+
+    //track button properties (i.e. background)
+    const element = buttonRef.current
+    const cssObj = window.getComputedStyle(element);
+
+    let bgColor = cssObj.getPropertyValue("background");
+    console.log(bgColor);
     };
 
     const handleTextColorChange = (event) => {
         // Update text color
         setTextColor(event.target.value);
-      };
+    };
 
-  return (
+return (
     
     <div>
         <NavBar/>
@@ -56,7 +64,7 @@ const CustomizePage = () => {
 
         <div className="page_generator">
             <div className="preview_container">
-                <button className="btnPreview" 
+                <button className="btnPreview" ref = {buttonRef}
                     style=
                     {{
                         color: textColor,
@@ -121,7 +129,7 @@ const CustomizePage = () => {
     </div>
 
     
-  );
+);
 };
 
 export default CustomizePage;
