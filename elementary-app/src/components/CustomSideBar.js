@@ -7,7 +7,7 @@ const CustomSideBar = () => {
       <div>
        
        <body>
-    <div class="CustomSidebar">
+    <div class="CustomSideBar">
         <ul>
             <li><a href="CustomPage.html">button</a></li>
             <li><a href="CustomPage.html">toggle</a></li>

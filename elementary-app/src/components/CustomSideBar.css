@@ -4,10 +4,9 @@ body {
     padding: 0;
 }
 
-.sidebar {
-    width: 250px;
+.CustomSideBar {
+    width: 300px;
     height: 80vh;
-    background-color: rgb(0, 0, 0);
     margin-top: 2%;
     margin-right: 10%;
     display: flex;
@@ -17,30 +16,36 @@ body {
     overflow: hidden;
 }
 
-.sidebar ul {
+.CustomSideBar ul {
     width: 100%;
     list-style: none;
     padding: 0;
 }
 
-.sidebar li {
+.CustomSideBar li {
     padding: 8px;
-    transition: background-color 0.3s, color 0.3s; /* Add transitions for background and text color */
+    transition: background-color 0.3s, color 0.3s;
     width: 100%;
 }
 
-.sidebar a {
+.CustomSideBar a {
     color: black;
     text-decoration: none;
-    font-family: Nunito;
+    font-family: 'Nunito', sans-serif;
     font-weight: 500;
 }
 
-.sidebar li:hover,
-.sidebar li:active {
-    color: rgb(26, 1, 1);
-    background-color: #FA9393; /* Change the background color when active */
-    border-radius: 0 10px 10px 0; /* Apply border radius on the right side */
+.CustomSideBar li:hover a,
+.CustomSideBar li:active a {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 0 10px 10px 0;
 }
-  
 
+
+.CustomSideBar li:hover,
+.CustomSideBar li:active {
+    color: rgb(255, 255, 255);
+    background-color: #FA9393;
+    border-radius: 0 10px 10px 0;
+}

@@ -2,7 +2,8 @@ import React from 'react';
 import '../assets/css/customizePage.css'; 
 import NavBar from '../components/NavBar'; 
 import Footer from '../components/Footer';
-import '../components/CustomSideBar.css'; // Import your CSS file
+import CustomSideBar from '../components/CustomSideBar';
+import '../components/CustomSideBar.css';
 import { useState, useEffect } from 'react';
 
 
@@ -33,10 +34,13 @@ const CustomizePage = () => {
     
     <div>
         <NavBar/>
+
+
         
     
-    <div className="content">
-        <div class="CustomSidebar">
+    <div className="content">   
+
+        <div class="CustomSideBar">
         <ul>
             <li><a href="customize">button</a></li>
             <li><a href="customize">toggle</a></li>
@@ -51,11 +55,13 @@ const CustomizePage = () => {
             <li><a href="customize">form</a></li>
         </ul>
     </div>
-        
-
+    
 
         <div className="page_generator">
+
+            
             <div className="preview_container">
+                
                 <button className="btnPreview" 
                     style=
                     {{
