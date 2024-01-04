@@ -68,7 +68,7 @@ const HomePage = () => {
         <div class="element-boxHolder">
             <div class="box-content">
             <div class="insides">
-                    <div class="element2">
+                    <div className="element2">
                 
                         <div className="textsInElement">on
                         
@@ -87,7 +87,31 @@ const HomePage = () => {
     
     <div class="element-container">
         <div class="element-boxHolder">
-            <div class="box-content"></div>
+            <div class="box-content">
+                <div className="element3">
+                    <div className="circle1">
+                        <div className="insides">
+                        <div className="smallercircle1">  
+                            </div>
+                       </div>
+                    </div>
+                    <div className="circle2">
+                    <div className="insides">
+                        <div className="smallercircle1">   
+                        <div className="insides">
+                                <div className='innercircle'></div>
+
+                            </div>
+
+
+                            </div>
+                    </div>
+                    </div>
+
+                </div>
+                
+                
+            </div>
         </div>
         <p class="shape-label">radio/checkbox</p>
     </div>
@@ -111,7 +135,7 @@ const HomePage = () => {
                 <div class="box-content">
                 <div class="insides">
                     <div class="element6">
-                        <div className="textsInElement">navbar
+                        <div className="textsInElement">home
                         </div>
                     </div>
                 </div>
