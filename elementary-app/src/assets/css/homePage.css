@@ -118,8 +118,6 @@ body {
     grid-template-rows: 1fr 1fr;
     margin-top: 50px;
     margin-left: 250px;
-
-    
 }
 
 .elements-inner-text1, .elements-inner-text2{
@@ -133,13 +131,12 @@ body {
     font-weight: 500;
     padding-bottom: 20px;
 }
+
 .elements-inner-text2{
     font-size: 25px;
     color: #CE3636;
     margin: 0;
-
     position: relative;
-
 }
 
 .firstContainer-elements-grid {
@@ -166,7 +163,6 @@ body {
     text-align: center; 
 }
 
-
 .element-boxHolder {
     position: relative;
     width: 230px;
@@ -178,8 +174,6 @@ body {
     transition: transform 0.2s ease-in-out;
     margin-bottom: 30px;
 }
-
-
 
 .element-boxHolder:hover {
     transform: scale(1.09);
@@ -194,6 +188,7 @@ body {
     font-family: 'Nunito', sans-serif;   
     font-weight: 500;
 }
+
 .see-more-text{
 
     grid-template-rows: 1fr;
@@ -283,6 +278,13 @@ body {
     font-size: smaller;
 }
 
+.textInSidebar{
+    margin-top: 40%;
+    color: rgb(255, 255, 255);
+    font-size: smaller;
+    font-weight: 400;
+}
+
 .element1 {
     width: 55%;
     margin-top: 40%;
@@ -365,9 +367,32 @@ body {
     justify-content: right;
 
 }
+
+.element5 {
+    margin-top: 65%;
+    width: 150px;
+    height: 50px;
+    border-radius: 0px 0px 20px 20px;
+    background: #F44040;
+    box-shadow: 9px 8px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.mockup_logos{
+    font-size: 9px;
+    margin-top: 10%;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
 .element6{
     width: 150px;
-    margin-top: 10%;
+    margin-top: 18.5%;
+    font-size: small;
     height: 25px;
     background: #F44040;
     border-radius: 5px;
@@ -375,6 +400,16 @@ body {
     display: flex;
     align-items: center;
     padding-left: 12px;
+}
+
+.element7 {
+    margin-top: 17%;
+    margin-left: 40%;
+    width: 70px;
+    height: 165px;
+    flex-shrink: 0;
+    border-radius: 15px 0px 0px 15px;
+    background: #F44040;
 }
 
 
