@@ -11,17 +11,19 @@ const CustomizePage = () => {
     const [buttonColor, setButtonColor] = useState('#808080'); // gray
     const [textColor, setTextColor] = useState('#ffffff'); // white text
     const [generatedHtml, setGeneratedHtml] = useState('');
-    const [isChecked, setChecked] = useState(false);
-    const [textSize, setTextSize] = useState(16); 
-
+    const [isDropShadowChecked, setDropShadowChecked] = useState(false);
+    const [isStrokeChecked, setStrokeChecked] = useState(false); 
+    const [textSize, setTextSize] = useState(16);
+    const [borderRadius, setBorderRadius] = useState(50); // Default border radius
+  
   
     useEffect(() => {
-      // Update the generated HTML
-      const boxShadowStyle = isChecked ? 'box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);' : '';
-      const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; border-radius: 40px; font-size: ${textSize}px; ${boxShadowStyle}">button</button>`;
-      setGeneratedHtml(htmlCode);
-    }, [buttonColor, textColor, isChecked, textSize]);
-  
+        // Update the generated HTML
+        const boxShadowStyle = isDropShadowChecked ? 'box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);' : '';
+        const borderStyle = isStrokeChecked ? '2px solid black' : 'none';
+        const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; border-radius: ${borderRadius}px; font-size: ${textSize}px; ${boxShadowStyle} ${borderStyle}">button</button>`;
+        setGeneratedHtml(htmlCode);
+    }, [buttonColor, textColor, isDropShadowChecked, isStrokeChecked, textSize, borderRadius]);
     const handleButtonColorChange = (event) => {
       // Update button color
       setButtonColor(event.target.value);
@@ -31,10 +33,26 @@ const CustomizePage = () => {
       // Update text color
       setTextColor(event.target.value);
     };
-    //checkbox status
-    const handleCheckboxChange = () => {
-      setChecked(!isChecked);
-    };
+    //checkboxes status
+    const handleCheckboxChange = (checkboxName) => {
+        switch (checkboxName) {
+          case 'dropShadow':
+            setDropShadowChecked(!isDropShadowChecked);
+            break;
+          case 'stroke':
+            setStrokeChecked(!isStrokeChecked);
+            break;
+          // Add more cases for other checkboxes if needed
+          default:
+            break;
+        }
+      };
+      //border radius
+      const handleBorderRadiusChange = (event) => {
+        // Update border radius
+        setBorderRadius(event.target.value);
+      };
+
   return (
     
     <div>
@@ -63,24 +81,25 @@ const CustomizePage = () => {
         <div className="page_generator">
             <div className="preview_container">
                 <button className="btnPreview" 
-                    style=
-                    {{
-                        color: textColor,
-                        background: buttonColor,
-                        border: `0 solid`,
-                        borderRadius: 40,
-                        fontSize: `${textSize}px`,
-                        //checkbox dropshadow
-                        boxShadow: isChecked ? '0 0 10px rgba(0, 0, 0, 0.5)' : 'none',
-                          
+                   style={{
+                    color: textColor,
+                    background: buttonColor,
+                    border: `0 solid`,
+                    borderRadius: `${borderRadius}px`,
+                    fontSize: `${textSize}px`,
+                    boxShadow: isDropShadowChecked ? '0 0 10px rgba(0, 0, 0, 0.5)' : 'none',
+                    border: isStrokeChecked ? '2px solid black' : 'none',
                     }}
                 >button</button>
             </div>
             <div className="adjust">
                 <ul class="checkboxes">
-                    <li><label><input type="checkbox" checked={isChecked} onChange={handleCheckboxChange} 
+                    <li><label><input  type="checkbox"
+                    checked={isDropShadowChecked}
+                    onChange={() => handleCheckboxChange('dropShadow')}
                     name="dropShadow"/> drop shadow</label></li>
-                    <li><label><input type="checkbox" name="stroke"/> stroke</label></li>
+                    <li><label><input type="checkbox" checked={isStrokeChecked}
+                    onChange={() => handleCheckboxChange('stroke')} name="stroke"/> stroke</label></li>
                     <li><label><input type="checkbox" name="image"/> image</label></li>
                     <li><label><input type="checkbox" name="label"/> label</label></li>
                 </ul>
@@ -92,7 +111,10 @@ const CustomizePage = () => {
                     />
                         
                     <label for="borderRadiusSlider">border radius</label> <br/>
-                    <input type="range" id="borderRadiusSlider" min="0" max="100" value="50"/>
+                    <input type="range" id="borderRadiusSlider" min="0"
+                    max="100"
+                    value={borderRadius}
+                    onChange={(e) => setBorderRadius(e.target.value)}/>
 
                     <label>text color</label> <br/>
                     <input
