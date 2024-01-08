@@ -1,13 +1,13 @@
 import React from 'react';
 import '../assets/css/helpPage.css'; 
 import Footer from '../components/Footer';
-import WhiteNavBar from '../components/WhiteNavBar';
+import NavBar from '../components/NavBar';
 
 const HelpPage = () => {
   return (
 
     <div>
-    <WhiteNavBar/>
+    <NavBar/>
       {<body>
         
     <div className="upperarea">
@@ -40,9 +40,6 @@ const HelpPage = () => {
         <div className="endingTexts">
             <div className="end1">For any concerns please reach us at </div>
             <div className='end2'>rubees-dev@gmail.com</div>
-
-
-
         </div>
 
 
