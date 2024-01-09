@@ -4,22 +4,20 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import CustomSideBar from '../components/CustomSideBar';
 import '../components/CustomSideBar.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import uploadIcon from '../assets/images/upload-icon.png';
-
-
 
 
 const CustomizePage = () => {
     const [buttonColor, setButtonColor] = useState('#808080'); // gray
     const [textColor, setTextColor] = useState('#ffffff'); // white text
     const [generatedHtml, setGeneratedHtml] = useState('');
+    const buttonRef = useRef();
     const [isDropShadowChecked, setDropShadowChecked] = useState(false);
     const [isStrokeChecked, setStrokeChecked] = useState(false); 
     const [textSize, setTextSize] = useState(16);
     const [borderRadius, setBorderRadius] = useState(50); // Default border radius
-  
-  
+
     useEffect(() => {
         // Update the generated HTML
         const boxShadowStyle = isDropShadowChecked ? 'box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);' : '';
@@ -29,34 +27,51 @@ const CustomizePage = () => {
     }, [buttonColor, textColor, isDropShadowChecked, isStrokeChecked, textSize, borderRadius]);
     const handleButtonColorChange = (event) => {
       // Update button color
-      setButtonColor(event.target.value);
+    setButtonColor(event.target.value);
     };
-  
+
     const handleTextColorChange = (event) => {
       // Update text color
-      setTextColor(event.target.value);
+    setTextColor(event.target.value);
     };
     //checkboxes status
     const handleCheckboxChange = (checkboxName) => {
         switch (checkboxName) {
-          case 'dropShadow':
+        case 'dropShadow':
             setDropShadowChecked(!isDropShadowChecked);
             break;
-          case 'stroke':
+        case 'stroke':
             setStrokeChecked(!isStrokeChecked);
             break;
           // Add more cases for other checkboxes if needed
-          default:
+        default:
             break;
         }
-      };
+    };
       //border radius
-      const handleBorderRadiusChange = (event) => {
+    const handleBorderRadiusChange = (event) => {
         // Update border radius
         setBorderRadius(event.target.value);
-      };
+    };
 
-  return (
+    useEffect(() => {
+        const element = buttonRef.current;
+        const cssObj = window.getComputedStyle(element);
+    
+        // Specify the style properties you are interested in
+        const propertiesOfInterest = ['color', 'background', 'borderRadius', 'font'];
+    
+        // Create an array of objects with specified properties and their values
+        const objStyle = propertiesOfInterest.map(property => ({
+        property,
+        value: cssObj.getPropertyValue(property),
+        }));
+    
+        console.log(objStyle);
+    }, []);
+    
+
+return (
     
     <div>
         <NavBar/>
@@ -88,8 +103,8 @@ const CustomizePage = () => {
             
             <div className="preview_container">
                 
-                <button className="btnPreview" 
-                   style={{
+                <button className="btnPreview" ref = {buttonRef}
+                style={{
                     color: textColor,
                     background: buttonColor,
                     border: `0 solid`,
@@ -102,16 +117,10 @@ const CustomizePage = () => {
             </div>
             <div className="adjust">
                 <ul className="checkboxes">
-                    <li><label><input type="checkbox" name="dropShadow"/> drop shadow</label></li>
-                    <li><label><input type="checkbox" name="stroke"/> stroke</label></li>
-                    <li>
-                <label>
-                    <input type="checkbox" name="image"/> image
-                </label>
-                <button className="uploadImageButton">
-                    UPLOAD <img src={uploadIcon} alt="Icon Placeholder" className="iconPlaceholder" />
-                </button>
-        </li>
+                    <li><label><input  type="checkbox" checked={isDropShadowChecked} onChange={() => handleCheckboxChange('dropShadow')} name="dropShadow"/> drop shadow</label></li>
+                    <li><label><input type="checkbox" checked={isStrokeChecked} onChange={() => handleCheckboxChange('stroke')} name="stroke"/> stroke</label></li>                    <li><label><input type="checkbox" name="image"/> image </label>
+                        <button className="uploadImageButton"> UPLOAD <img src={uploadIcon} alt="Icon Placeholder" className="iconPlaceholder" /> </button>
+                    </li>
                     <li><label><input type="checkbox" name="label"/> label</label></li>
                 </ul>
                     
@@ -166,7 +175,7 @@ const CustomizePage = () => {
     </div>
 
     
-  );
+);
 };
 
 export default CustomizePage;

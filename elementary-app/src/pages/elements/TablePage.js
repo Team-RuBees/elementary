@@ -1,15 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import NavBar from '../../components/NavBar';  // Update the path based on your project structure
-import Footer from '../../components/Footer';  // Update the path based on your project structure
-import CustomSideBar from '../../components/CustomSideBar';  // Update the path based on your project structure
-import '../../components/CustomSideBar.css';  // Update the path based on your project structure
-import uploadIcon from '../../assets/images/upload-icon.png';  // Update the path based on your project structure
+import React from 'react';
+import '../../assets/css/customizePage.css'; 
+import NavBar from '../../components/NavBar'; 
+import Footer from '../../components/Footer';
+import CustomSideBar from '../../components/CustomSideBar';
+import '../../components/CustomSideBar.css';
+import { useState, useEffect, useRef } from 'react';
+import uploadIcon from '../../assets/images/upload-icon.png';
+
+
 
 const TablePage = () => {
-
-    const [buttonColor, setButtonColor] = useState('#808080'); //gray
+    const [buttonColor, setButtonColor] = useState('#808080'); // gray
     const [textColor, setTextColor] = useState('#ffffff'); // white text
     const [generatedHtml, setGeneratedHtml] = useState('');
+    const buttonRef = useRef();
+    const [isDropShadowChecked, setDropShadowChecked] = useState(false);
+    const [isStrokeChecked, setStrokeChecked] = useState(false); 
+    const [textSize, setTextSize] = useState(16);
+    const [borderRadius, setBorderRadius] = useState(50); // Default border radius
 
 
     //for table page
@@ -44,9 +52,28 @@ const TablePage = () => {
     
 
     const handleTextColorChange = (event) => {
-        // Update text color
-        setTextColor(event.target.value);
-      };
+      // Update text color
+    setTextColor(event.target.value);
+    };
+    //checkboxes status
+    const handleCheckboxChange = (checkboxName) => {
+        switch (checkboxName) {
+        case 'dropShadow':
+            setDropShadowChecked(!isDropShadowChecked);
+            break;
+        case 'stroke':
+            setStrokeChecked(!isStrokeChecked);
+            break;
+          // Add more cases for other checkboxes if needed
+        default:
+            break;
+        }
+    };
+      //border radius
+    const handleBorderRadiusChange = (event) => {
+        // Update border radius
+        setBorderRadius(event.target.value);
+    };
 
 
 return (
@@ -61,17 +88,17 @@ return (
 
         <div class="CustomSideBar">
         <ul>
-            <li><a href="customize">button</a></li>
-            <li><a href="customize">toggle</a></li>
-            <li><a href="customize">radio button</a></li>
-            <li><a href="customize">input box</a></li>
-            <li><a href="customize">cards</a></li>
-            <li><a href="customize">footer</a></li>
-            <li><a href="customize">navbar</a></li>
-            <li><a href="customize">sidebar</a></li>
-            <li><a href="customize">TABLE</a></li>
-            <li><a href="customize">loader</a></li>
-            <li><a href="customize">form</a></li>
+            <li><a href="button">button</a></li>
+            <li><a href="toggle">toggle</a></li>
+            <li><a href="radiobutton">radio button</a></li>
+            <li><a href="inputbox">input box</a></li>
+            <li><a href="cards">cards</a></li>
+            <li><a href="footer">footer</a></li>
+            <li><a href="navbar">navbar</a></li>
+            <li><a href="sidebar">sidebar</a></li>
+            <li><a href="table">table</a></li>
+            <li><a href="loader">loader</a></li>
+            <li><a href="form">form</a></li>
         </ul>
     </div>
     
@@ -93,17 +120,11 @@ return (
             </table>
         </div>
             <div className="adjust">
-                {/* <ul className="checkboxes">
-                    <li><label><input type="checkbox" name="dropShadow"/> drop shadow</label></li>
-                    <li><label><input type="checkbox" name="stroke"/> stroke</label></li>
-                    <li>
-                <label>
-                    <input type="checkbox" name="image"/> image
-                </label>
-                <button className="uploadImageButton">
-                    UPLOAD <img src={uploadIcon} alt="Icon Placeholder" className="iconPlaceholder" />
-                </button>
-        </li>
+                <ul className="checkboxes">
+                    <li><label><input  type="checkbox" checked={isDropShadowChecked} onChange={() => handleCheckboxChange('dropShadow')} name="dropShadow"/> drop shadow</label></li>
+                    <li><label><input type="checkbox" checked={isStrokeChecked} onChange={() => handleCheckboxChange('stroke')} name="stroke"/> stroke</label></li>                    <li><label><input type="checkbox" name="image"/> image </label>
+                        <button className="uploadImageButton"> UPLOAD <img src={uploadIcon} alt="Icon Placeholder" className="iconPlaceholder" /> </button>
+                    </li>
                     <li><label><input type="checkbox" name="label"/> label</label></li>
                 </ul>
                     
@@ -137,7 +158,7 @@ return (
     </div>
 
     
-  );
+);
 };
 
 export default TablePage;

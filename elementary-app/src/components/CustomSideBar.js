@@ -9,17 +9,17 @@ const CustomSideBar = () => {
        <body>
     <div class="CustomSideBar">
         <ul>
-            <li><a href="CustomPage.html">button</a></li>
-            <li><a href="TogglePage.html">toggle</a></li>
-            <li><a href="RadioButton.html">radio button</a></li>
-            <li><a href="InputBoxPage.html">input box</a></li>
-            <li><a href="CardsPage.html">cards</a></li>
-            <li><a href="FooterPage.html">footer</a></li>
-            <li><a href="NavbarPage.html">navbar</a></li>
-            <li><a href="SidebarPage.html">sidebar</a></li>
-            <li><a href="TablePage.html">table</a></li>
-            <li><a href="LoaderPage.html">loader</a></li>
-            <li><a href="FormPage.html">form</a></li>
+            <li><Link to="/button">button</Link></li>
+            <li><Link to="/toggle">toggle</Link></li>
+            <li><Link to="/radiobutton">radio</Link></li>
+            <li><Link to="/inputbox">input box</Link></li>
+            <li><Link to="/cards">cards</Link></li>
+            <li><Link to="/footer">footer</Link></li>
+            <li><Link to="/navbar">nav bar</Link></li>
+            <li><Link to="/sidebar">sidebar</Link></li>
+            <li><Link to="/table">tabler</Link></li>
+            <li><Link to="/loader">loader</Link></li>
+            <li><Link to="/form">form</Link></li>
         </ul>
     </div>
 </body>
