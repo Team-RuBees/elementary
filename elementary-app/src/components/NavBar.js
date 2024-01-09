@@ -15,8 +15,8 @@ const NavBar = () => {
                     <li class="nav-left-container">
                         <img src={Logo} alt="Logo" className="Logo"/>
                         <li><Link to="/home" class="home">home</Link></li>
-                        <li><Link to="/generate" class="CustomizePage">generate</Link></li>
-                        <li><Link to="/home" class="home">support</Link></li>
+                        <li><Link to="/customize" class="CustomizePage">generate</Link></li>
+                        <li><Link to="/help" class="home">support</Link></li>
                         <li><Link to="/home" class="home">about</Link></li>
                     </li>
 
