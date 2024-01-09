@@ -64,15 +64,44 @@ const ButtonPage = () => {
         const propertiesOfInterest = ['color', 'background', 'borderRadius', 'font'];
     
         // Create an array of objects with specified properties and their values
-        const objStyle = propertiesOfInterest.map(property => ({
-        property,
-        value: cssObj.getPropertyValue(property),
+        const objStyle = propertiesOfInterest.map((property) => ({
+          property,
+          value: cssObj.getPropertyValue(property),
         }));
     
         console.log(objStyle);
     }, []);
     
-
+    //image upload
+      const inputRef = useRef(null);
+    
+      const handleImageUpload = () => {
+        // Trigger the file input
+        inputRef.current.click();
+      };
+    
+      const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            const backgroundImageUrl = event.target.result;
+            const otherButton = document.getElementById('btnPreview');
+    
+            // Log the retrieved button element
+            console.log(otherButton);
+    
+            // Check if the element is found before attempting to set its background
+            if (otherButton) {
+              otherButton.style.backgroundImage = `url(${backgroundImageUrl})`;
+            } else {
+              console.error('Button with ID "btnPreview" not found.');
+            }
+          };
+          reader.readAsDataURL(file);
+        }
+      };
+      
 return (
     
     <div>
@@ -105,7 +134,10 @@ return (
             
             <div className="preview_container">
                 
-                <button className="btnPreview" ref = {buttonRef}
+            <button
+                id="btnPreview"
+                className="btnPreview"
+                ref={buttonRef}
                 style={{
                     color: textColor,
                     background: buttonColor,
@@ -114,14 +146,24 @@ return (
                     fontSize: `${textSize}px`,
                     boxShadow: isDropShadowChecked ? '0 0 10px rgba(0, 0, 0, 0.5)' : 'none',
                     border: isStrokeChecked ? '2px solid black' : 'none',
-                    }}
-                >button</button>
+                }}
+                >
+                button
+            </button>
             </div>
             <div className="adjust">
                 <ul className="checkboxes">
                     <li><label><input  type="checkbox" checked={isDropShadowChecked} onChange={() => handleCheckboxChange('dropShadow')} name="dropShadow"/> drop shadow</label></li>
                     <li><label><input type="checkbox" checked={isStrokeChecked} onChange={() => handleCheckboxChange('stroke')} name="stroke"/> stroke</label></li>                    <li><label><input type="checkbox" name="image"/> image </label>
-                        <button className="uploadImageButton"> UPLOAD <img src={uploadIcon} alt="Icon Placeholder" className="iconPlaceholder" /> </button>
+                    <li><input type="file"
+                      accept="image/*"
+                      ref={inputRef}
+                      style={{ display: 'none' }}
+                      onChange={handleFileChange}
+                    /> </li>
+                      <button className="uploadImageButton" onClick={handleImageUpload}>
+                      UPLOAD <img src={uploadIcon} alt="Icon Placeholder" className="iconPlaceholder" />
+                    </button>
                     </li>
                     <li><label><input type="checkbox" name="label"/> label</label></li>
                 </ul>

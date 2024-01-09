@@ -7,73 +7,39 @@ import '../../components/CustomSideBar.css';
 import { useState, useEffect, useRef } from 'react';
 import uploadIcon from '../../assets/images/upload-icon.png';
 
-
-
 const ToggleButtonPage = () => {
-    const [buttonColor, setButtonColor] = useState('#808080'); // gray
-    const [textColor, setTextColor] = useState('#ffffff'); // white text
-    const [generatedHtml, setGeneratedHtml] = useState('');
-    const buttonRef = useRef();
-    const [isDropShadowChecked, setDropShadowChecked] = useState(false);
-    const [isStrokeChecked, setStrokeChecked] = useState(false); 
-    const [textSize, setTextSize] = useState(16);
-    const [borderRadius, setBorderRadius] = useState(50); // Default border radius
+  const [toggleColor, setToggleColor] = useState('#808080'); // gray
+  const [textColor, setTextColor] = useState('#ffffff'); // white text
+  const [generatedHtml, setGeneratedHtml] = useState('');
+  const toggleRef = useRef();
+  const [isDropShadowChecked, setDropShadowChecked] = useState(false);
+  const [isStrokeChecked, setStrokeChecked] = useState(false); 
+  const [size, setSize] = useState(16); // Initial size of the toggle
+  const [borderRadius, setBorderRadius] = useState(50); // Default border radius
 
-    useEffect(() => {
-        // Update the generated HTML
-        const boxShadowStyle = isDropShadowChecked ? 'box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);' : '';
-        const borderStyle = isStrokeChecked ? '2px solid black' : 'none';
-        const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; border-radius: ${borderRadius}px; font-size: ${textSize}px; ${boxShadowStyle} ${borderStyle}">button</button>`;
-        setGeneratedHtml(htmlCode);
-    }, [buttonColor, textColor, isDropShadowChecked, isStrokeChecked, textSize, borderRadius]);
-    const handleButtonColorChange = (event) => {
-      // Update button color
-    setButtonColor(event.target.value);
-    };
+  useEffect(() => {
+    // Update the generated HTML
+    const boxShadowStyle = isDropShadowChecked ? 'box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);' : '';
+    const borderStyle = isStrokeChecked ? '2px solid black' : 'none';
+    const htmlCode = `<input type="checkbox" class="toggle" style="width: ${size}px; height: ${size}px; background: ${toggleColor}; border-radius: ${borderRadius}px; ${boxShadowStyle} ${borderStyle}" />`;
+    setGeneratedHtml(htmlCode);
+  }, [toggleColor, textColor, isDropShadowChecked, isStrokeChecked, size, borderRadius]);
 
-    const handleTextColorChange = (event) => {
-      // Update text color
+  const handleToggleColorChange = (event) => {
+    // Update toggle color
+    setToggleColor(event.target.value);
+  };
+
+  const handleTextColorChange = (event) => {
+    // Update text color
     setTextColor(event.target.value);
-    };
-    //checkboxes status
-    const handleCheckboxChange = (checkboxName) => {
-        switch (checkboxName) {
-        case 'dropShadow':
-            setDropShadowChecked(!isDropShadowChecked);
-            break;
-        case 'stroke':
-            setStrokeChecked(!isStrokeChecked);
-            break;
-          // Add more cases for other checkboxes if needed
-        default:
-            break;
-        }
-    };
-      //border radius
-    const handleBorderRadiusChange = (event) => {
-        // Update border radius
-        setBorderRadius(event.target.value);
-    };
+  };
 
-    useEffect(() => {
-        const element = buttonRef.current;
-        const cssObj = window.getComputedStyle(element);
-    
-        // Specify the style properties you are interested in
-        const propertiesOfInterest = ['color', 'background', 'borderRadius', 'font'];
-    
-        // Create an array of objects with specified properties and their values
-        const objStyle = propertiesOfInterest.map(property => ({
-        property,
-        value: cssObj.getPropertyValue(property),
-        }));
-    
-        console.log(objStyle);
-    }, []);
-    
+  const handleSizeChange = (event) => {
+    setSize(event.target.value);
+  };
 
-return (
-    
+  return (
     <div>
         <NavBar/>
 
@@ -97,28 +63,32 @@ return (
             <li><a href="form">form</a></li>
         </ul>
     </div>
-    
-
         <div className="page_generator">
-
-            
-            <div className="preview_container">
-                
-                <input type="checkbox" className="togglePreview" ref = {buttonRef} ></input> 
-            </div>
+          <div className="preview_container">
+          <input
+          type="checkbox"
+          className="togglePreview"
+          style={{
+            width: `${size}px`,
+            height: `${size}px`,
+            background: toggleColor,
+            borderRadius: `${borderRadius}px`,
+          }}
+        />
+          </div>
             <div className="adjust">
                 <ul className="checkboxes">
-                    <li><label><input  type="checkbox" checked={isDropShadowChecked} onChange={() => handleCheckboxChange('dropShadow')} name="dropShadow"/> drop shadow</label></li>
-                    <li><label><input type="checkbox" checked={isStrokeChecked} onChange={() => handleCheckboxChange('stroke')} name="stroke"/> stroke</label></li>                    <li><label><input type="checkbox" name="image"/> image </label>
+                    <li><label><input  type="checkbox" checked={isDropShadowChecked}  name="dropShadow"/> drop shadow</label></li>
+                    <li><label><input type="checkbox" checked={isStrokeChecked}  name="stroke"/> stroke</label></li>                    <li><label><input type="checkbox" name="image"/> image </label>
                         <button className="uploadImageButton"> UPLOAD <img src={uploadIcon} alt="Icon Placeholder" className="iconPlaceholder" /> </button>
                     </li>
                     <li><label><input type="checkbox" name="label"/> label</label></li>
                 </ul>
                     
                 <div class="sliders">
-                    <label for="textSizeSlider">text size</label> <br/>
-                    <input type="range" id="textSizeSlider" min="8"
-                    max="50" value={textSize}  onChange={(e) => setTextSize(e.target.value)}
+                <label for="sizeSlider">size</label> <br/>
+                    <input type="range" id="sizeSlider" min="8"
+                    max="80" value={size} onChange={handleSizeChange} 
                     />
                         
                     <label for="borderRadiusSlider">border radius</label> <br/>
@@ -139,8 +109,8 @@ return (
                     <input
                         type="color"
                         id="btnColorPicker"
-                        value={buttonColor} // Use the dynamic buttonColor state
-                        onChange={handleButtonColorChange} // Update the buttonColor state on change
+                        value={toggleColor} // Use the dynamic buttonColor state
+                        onChange={handleToggleColorChange} // Update the buttonColor state on change
                     />                
                 </div>
             </div>
