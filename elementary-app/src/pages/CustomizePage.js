@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import CustomSideBar from '../components/CustomSideBar';
 import '../components/CustomSideBar.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import uploadIcon from '../assets/images/upload-icon.png';
 
 
@@ -117,16 +117,10 @@ return (
             </div>
             <div className="adjust">
                 <ul className="checkboxes">
-                    <li><label><input type="checkbox" name="dropShadow"/> drop shadow</label></li>
-                    <li><label><input type="checkbox" name="stroke"/> stroke</label></li>
-                    <li>
-                <label>
-                    <input type="checkbox" name="image"/> image
-                </label>
-                <button className="uploadImageButton">
-                    UPLOAD <img src={uploadIcon} alt="Icon Placeholder" className="iconPlaceholder" />
-                </button>
-        </li>
+                    <li><label><input  type="checkbox" checked={isDropShadowChecked} onChange={() => handleCheckboxChange('dropShadow')} name="dropShadow"/> drop shadow</label></li>
+                    <li><label><input type="checkbox" checked={isStrokeChecked} onChange={() => handleCheckboxChange('stroke')} name="stroke"/> stroke</label></li>                    <li><label><input type="checkbox" name="image"/> image </label>
+                        <button className="uploadImageButton"> UPLOAD <img src={uploadIcon} alt="Icon Placeholder" className="iconPlaceholder" /> </button>
+                    </li>
                     <li><label><input type="checkbox" name="label"/> label</label></li>
                 </ul>
                     
