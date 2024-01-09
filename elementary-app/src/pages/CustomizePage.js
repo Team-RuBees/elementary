@@ -2,8 +2,11 @@ import React from 'react';
 import '../assets/css/customizePage.css'; 
 import NavBar from '../components/NavBar'; 
 import Footer from '../components/Footer';
-import '../components/CustomSideBar.css'; // Import your CSS file
+import CustomSideBar from '../components/CustomSideBar';
+import '../components/CustomSideBar.css';
 import { useState, useEffect } from 'react';
+import uploadIcon from '../assets/images/upload-icon.png';
+
 
 
 
@@ -57,29 +60,34 @@ const CustomizePage = () => {
     
     <div>
         <NavBar/>
+
+
         
     
-    <div className="content">
-        <div class="CustomSidebar">
+    <div className="content">   
+
+        <div class="CustomSideBar">
         <ul>
-            <li><a href="customize">button</a></li>
-            <li><a href="customize">toggle</a></li>
-            <li><a href="customize">radio button</a></li>
-            <li><a href="customize">input box</a></li>
-            <li><a href="customize">cards</a></li>
-            <li><a href="customize">footer</a></li>
-            <li><a href="customize">navbar</a></li>
-            <li><a href="customize">sidebar</a></li>
-            <li><a href="customize">table</a></li>
-            <li><a href="customize">loader</a></li>
-            <li><a href="customize">form</a></li>
+            <li><a href="button">button</a></li>
+            <li><a href="toggle">toggle</a></li>
+            <li><a href="radiobutton">radio button</a></li>
+            <li><a href="inputbox">input box</a></li>
+            <li><a href="cards">cards</a></li>
+            <li><a href="footer">footer</a></li>
+            <li><a href="navbar">navbar</a></li>
+            <li><a href="sidebar">sidebar</a></li>
+            <li><a href="table">table</a></li>
+            <li><a href="loader">loader</a></li>
+            <li><a href="form">form</a></li>
         </ul>
     </div>
-        
-
+    
 
         <div className="page_generator">
+
+            
             <div className="preview_container">
+                
                 <button className="btnPreview" 
                    style={{
                     color: textColor,
@@ -93,14 +101,17 @@ const CustomizePage = () => {
                 >button</button>
             </div>
             <div className="adjust">
-                <ul class="checkboxes">
-                    <li><label><input  type="checkbox"
-                    checked={isDropShadowChecked}
-                    onChange={() => handleCheckboxChange('dropShadow')}
-                    name="dropShadow"/> drop shadow</label></li>
-                    <li><label><input type="checkbox" checked={isStrokeChecked}
-                    onChange={() => handleCheckboxChange('stroke')} name="stroke"/> stroke</label></li>
-                    <li><label><input type="checkbox" name="image"/> image</label></li>
+                <ul className="checkboxes">
+                    <li><label><input type="checkbox" name="dropShadow"/> drop shadow</label></li>
+                    <li><label><input type="checkbox" name="stroke"/> stroke</label></li>
+                    <li>
+                <label>
+                    <input type="checkbox" name="image"/> image
+                </label>
+                <button className="uploadImageButton">
+                    UPLOAD <img src={uploadIcon} alt="Icon Placeholder" className="iconPlaceholder" />
+                </button>
+        </li>
                     <li><label><input type="checkbox" name="label"/> label</label></li>
                 </ul>
                     
