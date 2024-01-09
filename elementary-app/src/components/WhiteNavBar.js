@@ -1,22 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import '../components/NavBar.css'; // Import your CSS file
-import Logo from '../assets/images/elementary-red-logo.png';
+import '../components/WhiteNavBar.css'; // Import your CSS file
+import Logo from '../assets/images/elementary-logo.png';
 
 
-const NavBar = () => {
+const WhiteNavBar = () => {
     return (
       <div>
        
     <header>
         <nav>
-            <div id="NavBar">
+            <div id="WhiteNavBar">
                 <ul>
                     <li class="nav-left-container">
                         <img src={Logo} alt="Logo" className="Logo"/>
                         <li><Link to="/home" class="home">home</Link></li>
-                        <li><Link to="/customize" class="CustomizePage">generate</Link></li>
-                        <li><Link to="/help" class="home">support</Link></li>
+                        <li><Link to="/home" class="home">generate</Link></li>
+                        <li><Link to="/home" class="home">support</Link></li>
                         <li><Link to="/home" class="home">about</Link></li>
                     </li>
 
@@ -40,4 +40,4 @@ const NavBar = () => {
     );
   };
   
-  export default NavBar;
+  export default WhiteNavBar;
