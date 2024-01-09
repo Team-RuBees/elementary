@@ -23,19 +23,29 @@ const CustomizePage = () => {
     const handleButtonColorChange = (event) => {
       // Update button color
     setButtonColor(event.target.value);
-
-    //track button properties (i.e. background)
-    const element = buttonRef.current
-    const cssObj = window.getComputedStyle(element);
-
-    let bgColor = cssObj.getPropertyValue("background");
-    console.log(bgColor);
     };
 
     const handleTextColorChange = (event) => {
         // Update text color
         setTextColor(event.target.value);
     };
+
+    useEffect(() => {
+        const element = buttonRef.current;
+        const cssObj = window.getComputedStyle(element);
+    
+        // Specify the style properties you are interested in
+        const propertiesOfInterest = ['color', 'background', 'borderRadius', 'font'];
+    
+        // Create an array of objects with specified properties and their values
+        const objStyle = propertiesOfInterest.map(property => ({
+        property,
+        value: cssObj.getPropertyValue(property),
+        }));
+    
+        console.log(objStyle);
+    }, []);
+    
 
 return (
     
