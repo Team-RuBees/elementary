@@ -1,16 +1,15 @@
-import React from 'react';
-import '../assets/css/customizePage.css'; 
-import NavBar from '../components/NavBar'; 
-import Footer from '../components/Footer';
-import CustomSideBar from '../components/CustomSideBar';
-import '../components/CustomSideBar.css';
-import { useState, useEffect } from 'react';
-import uploadIcon from '../assets/images/upload-icon.png';
+import React, { useState, useEffect } from 'react';
+import NavBar from '../../components/NavBar';  // Update the path based on your project structure
+import Footer from '../../components/Footer';  // Update the path based on your project structure
+import CustomSideBar from '../../components/CustomSideBar';  // Update the path based on your project structure
+import '../../components/CustomSideBar.css';  // Update the path based on your project structure
+import uploadIcon from '../../assets/images/upload-icon.png';  // Update the path based on your project structure
 
 
 
 
-const CustomizePage = () => {
+
+const ButtonPage = () => {
 
     const [buttonColor, setButtonColor] = useState('#808080'); //gray
     const [textColor, setTextColor] = useState('#ffffff'); // white text
@@ -44,17 +43,17 @@ const CustomizePage = () => {
 
         <div class="CustomSideBar">
         <ul>
-            <li><a href="button">button</a></li>
-            <li><a href="toggle">toggle</a></li>
-            <li><a href="radiobutton">radio button</a></li>
-            <li><a href="inputbox">input box</a></li>
-            <li><a href="cards">cards</a></li>
-            <li><a href="footer">footer</a></li>
-            <li><a href="navbar">navbar</a></li>
-            <li><a href="sidebar">sidebar</a></li>
-            <li><a href="table">table</a></li>
-            <li><a href="loader">loader</a></li>
-            <li><a href="form">form</a></li>
+            <li><a href="customize">BUTTON</a></li>
+            <li><a href="customize">toggle</a></li>
+            <li><a href="customize">radio button</a></li>
+            <li><a href="customize">input box</a></li>
+            <li><a href="customize">cards</a></li>
+            <li><a href="customize">footer</a></li>
+            <li><a href="customize">navbar</a></li>
+            <li><a href="customize">sidebar</a></li>
+            <li><a href="customize">table</a></li>
+            <li><a href="customize">loader</a></li>
+            <li><a href="customize">form</a></li>
         </ul>
     </div>
     
@@ -139,4 +138,4 @@ const CustomizePage = () => {
   );
 };
 
-export default CustomizePage;
+export default ButtonPage;
