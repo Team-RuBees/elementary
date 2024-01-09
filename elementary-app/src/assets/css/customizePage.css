@@ -306,7 +306,7 @@ label {
     color: #000000;
 }
 
-#textSizeSlider, #borderRadiusSlider {
+#textSizeSlider, #borderRadiusSlider, #sizeSlider {
     width: 80%; /*to make it longer */
     margin-left: 5%;
     display: block;

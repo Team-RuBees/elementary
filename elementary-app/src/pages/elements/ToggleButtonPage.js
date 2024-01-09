@@ -8,14 +8,15 @@ import { useState, useEffect, useRef } from 'react';
 import uploadIcon from '../../assets/images/upload-icon.png';
 
 const ToggleButtonPage = () => {
-  const [toggleColor, setToggleColor] = useState('#808080'); // gray
+  const [toggleColor, setToggleColor] = useState('#808080'); // Corrected variable name
   const [textColor, setTextColor] = useState('#ffffff'); // white text
   const [generatedHtml, setGeneratedHtml] = useState('');
   const toggleRef = useRef();
   const [isDropShadowChecked, setDropShadowChecked] = useState(false);
-  const [isStrokeChecked, setStrokeChecked] = useState(false); 
-  const [size, setSize] = useState(16); // Initial size of the toggle
-  const [borderRadius, setBorderRadius] = useState(50); // Default border radius
+  const [isStrokeChecked, setStrokeChecked] = useState(false);
+  const [size, setSize] = useState(16);
+  const [borderRadius, setBorderRadius] = useState(50);
+  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     // Update the generated HTML
@@ -65,16 +66,35 @@ const ToggleButtonPage = () => {
     </div>
         <div className="page_generator">
           <div className="preview_container">
-          <input
-          type="checkbox"
-          className="togglePreview"
-          style={{
-            width: `${size}px`,
-            height: `${size}px`,
-            background: toggleColor,
-            borderRadius: `${borderRadius}px`,
-          }}
-        />
+            <input type="checkbox" className="togglePreview"
+              style={{display: 'none' /* Hide the actual checkbox */}}
+              checked={isChecked}
+              onChange={() => setIsChecked(!isChecked)}
+            />
+
+            <div class="toggle-track"
+              style={{
+                width: `${size}px`,
+                height: `${size}px`,
+                background: toggleColor,
+                borderRadius: `${borderRadius}px`,
+                }} 
+              >
+              <div class="toggle-thumb"
+              style={{
+                background: '#fff',
+                borderRadius: '50%',
+                position: 'absolute',
+                height: '26px',
+                width: '26px',
+                top: '4px',
+                left: '4px',
+                transition: 'transform 0.3s ease',
+                left: isChecked ? '30px' : '4px', // Adjust the left position based on the checked state
+                }} ></div>
+
+            </div>
+
           </div>
             <div className="adjust">
                 <ul className="checkboxes">
@@ -109,7 +129,7 @@ const ToggleButtonPage = () => {
                     <input
                         type="color"
                         id="btnColorPicker"
-                        value={toggleColor} // Use the dynamic buttonColor state
+                        value={setToggleColor} // Use the dynamic buttonColor state
                         onChange={handleToggleColorChange} // Update the buttonColor state on change
                     />                
                 </div>
