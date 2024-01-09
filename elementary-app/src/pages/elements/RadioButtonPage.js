@@ -63,16 +63,16 @@ const RadioButtonPage = () => {
             
             <div className="preview_container">
                 
-                {/* <button className="btnPreview" 
-                    style=
-                    {{
-                        color: textColor,
-                        background: buttonColor,
-                        border: '0 ' + 'solid',
-                        borderRadius: 40,
-                        fontSize: 1 + 'rem'
-                    }}
-                >button</button> */}
+            <input
+                type="radio"
+                className="togglePreview"
+                style={{
+                    width: '16 px',
+                    height: '11 px',
+                    background: buttonColor,
+                    borderRadius: `${borderRadius}px`,
+                }}
+                />
             </div>
             <div className="adjust">
                 {/* <ul className="checkboxes">

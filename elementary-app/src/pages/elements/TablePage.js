@@ -11,23 +11,45 @@ const TablePage = () => {
     const [textColor, setTextColor] = useState('#ffffff'); // white text
     const [generatedHtml, setGeneratedHtml] = useState('');
 
-    useEffect(() => {
-        // Update the generated HTML 
-        const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; border-radius: 40px; font-size: 1rem;">button</button>`;
-        setGeneratedHtml(htmlCode);
-      }, [buttonColor, textColor]);
 
-    const handleButtonColorChange = (event) => {
-      // Update button color
-      setButtonColor(event.target.value);
-    };
+    //for table page
+    const [tableRowCount, setTableRowCount] = useState(3);
+    const [tableColumnCount, setTableColumnCount] = useState(3);
+
+    useEffect(() => {
+        let htmlCode = `<table style={{ borderCollapse: 'collapse', width: '100%' }}>`;
+    
+        // Add table headers
+        htmlCode += `<thead><tr>`;
+        for (let colIndex = 1; colIndex <= tableColumnCount; colIndex++) {
+            htmlCode += `<th>Header ${colIndex}</th>`;
+        }
+        htmlCode += `</tr></thead>`;
+    
+        // Add table body
+        htmlCode += `<tbody>`;
+        for (let rowIndex = 1; rowIndex <= tableRowCount; rowIndex++) {
+            htmlCode += `<tr>`;
+            for (let colIndex = 1; colIndex <= tableColumnCount; colIndex++) {
+                htmlCode += `<td>Row ${rowIndex}, Cell ${colIndex}</td>`;
+            }
+            htmlCode += `</tr>`;
+        }
+        htmlCode += `</tbody>`;
+    
+        htmlCode += `</table>`;
+    
+        setGeneratedHtml(htmlCode);
+    }, [tableRowCount, tableColumnCount]);
+    
 
     const handleTextColorChange = (event) => {
         // Update text color
         setTextColor(event.target.value);
       };
 
-  return (
+
+return (
     
     <div>
         <NavBar/>
@@ -57,19 +79,19 @@ const TablePage = () => {
         <div className="page_generator">
 
             
-            <div className="preview_container">
-                
-                {/* <button className="btnPreview" 
-                    style=
-                    {{
-                        color: textColor,
-                        background: buttonColor,
-                        border: '0 ' + 'solid',
-                        borderRadius: 40,
-                        fontSize: 1 + 'rem'
-                    }}
-                >button</button> */}
-            </div>
+        <div className="preview_container">
+            <table style={{ borderCollapse: 'collapse', width: '80%' }}>
+                <tbody>
+                    {Array.from({ length: tableRowCount }).map((_, rowIndex) => (
+                        <tr key={rowIndex}>
+                            {Array.from({ length: tableColumnCount }).map((_, colIndex) => (
+                                <td key={colIndex} style={{ border: '1px solid #000', padding: '8px' }}></td>
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
             <div className="adjust">
                 {/* <ul className="checkboxes">
                     <li><label><input type="checkbox" name="dropShadow"/> drop shadow</label></li>
@@ -86,28 +108,12 @@ const TablePage = () => {
                 </ul>
                     
                 <div class="sliders">
-                    <label for="textSizeSlider">text size</label> <br/>
-                    <input type="range" id="textSizeSlider" min="0" max="100" value="50"/>
-                        
-                    <label for="borderRadiusSlider">border radius</label> <br/>
-                    <input type="range" id="borderRadiusSlider" min="0" max="100" value="50"/>
+                    <label for="rowCountSlider">Rows</label> <br/>
+                    <input type="range" id="rowCountSlider" min="1" max="10" value={tableRowCount} onChange={(e) => setTableRowCount(e.target.value)} />
 
-                    <label>text color</label> <br/>
-                    <input
-                        type="color"
-                        id="txtColorPicker"
-                        value={textColor} // change textColor state
-                        onChange={handleTextColorChange} // Update the buttonColor state on change
-                    /> 
-
-                    <label for="colorSlider">color</label> <br/>
-                    <input
-                        type="color"
-                        id="btnColorPicker"
-                        value={buttonColor} // Use the dynamic buttonColor state
-                        onChange={handleButtonColorChange} // Update the buttonColor state on change
-                    />                
-                </div> */}
+                    <label for="columnCountSlider">Columns</label> <br/>
+                    <input type="range" id="columnCountSlider" min="1" max="10" value={tableColumnCount} onChange={(e) => setTableColumnCount(e.target.value)} />
+                </div>
             </div>
             <div class="generatedCode-container">
                 <p>{generatedHtml}</p>
