@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+
+about-body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+h1 {
+  text-align: center;
+  color: #b61b1b;
+  font-size: 50px;
+  margin-top: 20px;
+}
+
+h1 span {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.8px #b61b1b;
+  font-family: 'Nunito', sans-serif;
+}
+
+.slanted-text {
+  text-align: center;
+  font-style: italic;
+  transform: skew(-8deg);
+  margin-top: 0px;
+  color: #b61b1b;
+
+}
+
+.team-circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  margin: 0 30px;
+}
+
+.about-us-p {
+  margin-left: 25px;
+  font-size: 14px;
+  margin-bottom: 70px;
+}
+
+.team-member {
+  color: #981313;
+  margin-left: 25px;
+  font-size: 14px;
+}

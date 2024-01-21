@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Footer from './components/Footer';
 import HelpPage from './pages/HelpPage';
+import AboutPage from './pages/AboutPage';
 
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element = {<Login/>} />
           <Route path="/signup" element = {<SignUp/>} />
           <Route path="/help" element = {<HelpPage/>}/>
+          <Route path="/about" element = {<AboutPage/>}/>
           
         </Routes>
       </BrowserRouter>
