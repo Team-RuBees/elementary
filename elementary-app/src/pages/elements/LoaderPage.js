@@ -156,22 +156,17 @@ return (
                 </div>
             </div>
             <div class="generatedCode-container">
-                <p>{generatedHtml}</p>
-            </div>
+            <div className="copyCodeRectangle">
+                            
+                            <button className="copyCodeButton">Copy Code</button>
+                        </div>
+                        <div className='generated-space'>
+                        <p>{generatedHtml}</p>
+                        </div>            </div>
         </div>
     </div>
 
 
-
-
-
-
-
-
-
-
-
-    
 
     <Footer/>
     </div>

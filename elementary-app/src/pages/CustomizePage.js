@@ -153,8 +153,16 @@ return (
                     />                
                 </div>
             </div>
-            <div class="generatedCode-container">
-                <p>{generatedHtml}</p>
+            {/* copy this to indiv pages*/}
+            <div className="generatedCode-container">
+                        <div className="copyCodeRectangle">
+                            
+                            <button className="copyCodeButton">Copy Code</button>
+                        </div>
+                        <div className='generated-space'>
+                        <p>{generatedHtml}</p>
+                        </div>
+            {/* copy this */}
             </div>
         </div>
     </div>
