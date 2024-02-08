@@ -2,6 +2,8 @@ import React from 'react';
 import '../assets/css/homePage.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
+
 import { useLocation } from "react-router-dom";
 
 const HomePage = () => {

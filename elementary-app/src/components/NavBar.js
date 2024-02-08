@@ -14,19 +14,19 @@ const NavBar = () => {
         navigate("/login")
     }
     return (
-        <div>
-
-            <header>
-                <nav>
-                    <div id="NavBar">
-                        <ul>
-                            <li class="nav-left-container">
-                                <img src={Logo} alt="Logo" className="Logo" />
-                                <li><Link to="/home" class="home">home</Link></li>
-                                <li><Link to="/customize" class="CustomizePage">generate</Link></li>
-                                <li><Link to="/help" class="home">support</Link></li>
-                                <li><Link to="/home" class="home">about</Link></li>
-                            </li>
+      <div>
+       
+    <header>
+        <nav>
+            <div id="NavBar">
+                <ul>
+                    <li class="nav-left-container">
+                        <img src={Logo} alt="Logo" className="Logo"/>
+                        <li><Link to="/home" class="home">home</Link></li>
+                        <li><Link to="/button" class="CustomizePage">generate</Link></li>
+                        <li><Link to="/help" class="home">support</Link></li>
+                        <li><Link to="/home" class="home">about</Link></li>
+                    </li>
 
                             {user ?
                                 <li class="nav-right-container right-links">
