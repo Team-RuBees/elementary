@@ -12,13 +12,13 @@ const AboutPage = () => {
 
       <h1 className="logo">
         {/* <img src={Logo} alt="Logo" className="Logo"/> */}
-        element&gt;<span>ary</span>
+        &lt;element&gt;<span>ary</span>
       </h1>
 
       <div className="slanted-text">ui made simple</div>
 
-      <section style={{ width: '50%', margin: '20px auto', padding: '20px', textAlign: 'center', background: 'linear-gradient(135deg, #CE3636, #720505)', color: 'white', borderRadius: '50px' }}>
-        <h2 style={{ marginTop: '0', fontWeight: '500', marginBottom: '15px' }}>about us</h2>
+      <section className='container'>
+        <h2 className='title'>about us</h2>
         <div className='about-us-p' >
           Embark on a journey with a group of visionary college student developers who are redefining the boundaries of web development.
           In the dynamic world of coding, where time and expertise are precious commodities, these intelligent individuals have harnessed their collective talents to address the challenges faced in crafting compelling user interfaces.
@@ -26,36 +26,36 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section style={{ width: '50%', margin: '20px auto', textAlign: 'center', color: '#981313' }}>
+      <section className='container-team'>
         <br />
-        <h2 style={{ color: '#981313', fontWeight: '500' }}>meet the team</h2>
+        <h2 className='title-team'>meet the team</h2>
       </section>
 
       {/* Circles with names */}
       <div className="team-circles">
         <div className="team-member">
           <div className="circle"></div>
-          <p className="about-us-p">Mary Joyce Calangian</p>
+          <p className="name">Mary Joyce Calangian</p>
         </div>
         <div className="team-member">
           <div className="circle"></div>
-          <p className="about-us-p">Trisha Camille Galicia</p>
+          <p className="name">Trisha Camille Galicia</p>
         </div>
         <div className="team-member">
           <div className="circle"></div>
-          <p className="about-us-p">Aliza Ashly Glodoviza</p>
+          <p className="name">Aliza Ashly Glodoviza</p>
         </div>
         <div className="team-member">
           <div className="circle"></div>
-          <p className="about-us-p">Acel Gabrielle Margallo</p>
+          <p className="name">Acel Gabrielle Margallo</p>
         </div>
         <div className="team-member">
           <div className="circle"></div>
-          <p className="about-us-p" style={{ marginLeft: '37px' }}>Uriel Ryan Reyles</p>
+          <p className="name">Uriel Ryan Reyles</p>
         </div>
         <div className="team-member">
           <div className="circle"></div>
-          <p className="about-us-p">John Lawrence Trinidad</p>
+          <p className="name">John Lawrence Trinidad</p>
         </div>
       </div>
 
