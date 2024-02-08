@@ -2,6 +2,13 @@ import React from 'react';
 import '../assets/css/homePage.css'; 
 import NavBar from '../components/NavBar'; 
 import Footer from '../components/Footer';
+import Logo from '../assets/images/elementary-red-logo.png';
+import selectElementImage from 'C:/Users/Miguel/Documents/GitHub/elementary/elementary-app/src/assets/images/select-element.png';
+import adjustElementImage from 'C:/Users/Miguel/Documents/GitHub/elementary/elementary-app/src/assets/images/adjust-element.png';
+import pasteElementImage from 'C:/Users/Miguel/Documents/GitHub/elementary/elementary-app/src/assets/images/paste-element.png';
+import enjoyElementImage from 'C:/Users/Miguel/Documents/GitHub/elementary/elementary-app/src/assets/images/enjoy.png';
+
+
 
 const HomePage = () => {
   return (
@@ -209,6 +216,53 @@ const HomePage = () => {
 
 
 </div>
+<div className="fourthsection">
+    <div className="walkthrough-container">
+        <div className="logo-sec">
+            <div className='image-sec'>
+                <img src={Logo} alt="Logo" className="Logoo"/>
+                <div className='walkthrough-text'>walkthrough</div>
+            </div>
+        </div>
+        <div className="steps-sec">
+            <div className="all-steps">
+                <div className="number-circle">1</div>
+                <img src={selectElementImage} alt="Select Element" className="select-element-image" />
+                <div className="title-sec">Select an element</div>
+                <div className='desc'>Start by choosing from our collection of elements like buttons, text boxes, and images. Find the one that fits your needs.</div>
+
+            </div>
+            <div className="all-steps">
+                <div className="number-circle">2</div>
+                <img src={adjustElementImage} alt="Select Element" className="select-element-image" />
+                <div className="title-sec">Modify it</div>
+                <div className='desc'>Change up the look and feel with ease! Drag, tick, & click to adjust colors, sizes, and more – no coding required.</div>
+
+
+            </div>
+
+            <div className="all-steps">
+                <div className="number-circle">3</div>
+                <img src={pasteElementImage} alt="Select Element" className="select-element-image" />
+                <div className="title-sec">Copy the code</div>
+                <div className='desc'>See how your changes take shape in the live preview. When you're happy, simply copy the code.</div>
+
+                
+
+            </div>
+
+            <div className="all-steps">
+                <div className="number-circle">4</div>
+                <img src={enjoyElementImage} alt="Select Element" className="select-element-image" />
+                <div className="title-sec">Paste it!</div>
+                <div className='desc'>Paste the code into your existing project and repeat! Keep adding elements to create your stunning UI in no time.</div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 
