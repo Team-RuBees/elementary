@@ -106,6 +106,12 @@ const HomePage = () => {
     <div class="element-container">
         <div class="element-boxHolder">
             <div class="box-content"></div>
+            <div class="insides">
+                        <div className="element4">
+
+                    </div>
+                    </div>
+
         </div>
         <p class="shape-label">input box</p>
     </div>
@@ -155,7 +161,13 @@ const HomePage = () => {
         <div class="element-container">
             <div class="element-boxHolder">
                 <div class="box-content">
+                <div class="insides">
+                    <div class="element8">
+                    <div class="element8A"/>
 
+
+                    </div>
+                </div>
                 </div>
             </div>
             <p class="shape-label">table</p>
