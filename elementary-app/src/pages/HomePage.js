@@ -18,7 +18,10 @@ const HomePage = () => {
                 <p>ui made  <b>simple</b></p>
             </div>
             <div class="text-column2">
-                <p id="typewriter-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt leo nisl, et varius justo tincidunt eget. Pellentesque at sodales orci. Suspendisse ut risus ut dolor maximus consectetur in a massa. Integer ultricies cursus ex et pellentesque. Aliquam tellus risus, hendrerit eu ex vel, semper sollicitudin metus.<span class="cursor">|</span></p>
+                <p id="typewriter-text"> Create stunning interfaces with just a few slides, drag, and ticks. Say goodbye to coding complexities and embrace simplicity at its best. With our library of pre-built UI elements, easily generate CSS code, customize with ease, and watch your design plus vision come alive instantly.
+
+
+<span class="cursor">|</span></p>
             </div>
             <div class="button-column">
                 <p>get started <b>&darr;</b></p>
