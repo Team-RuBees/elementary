@@ -2,6 +2,8 @@ import React from 'react';
 import '../assets/css/homePage.css'; 
 import NavBar from '../components/NavBar'; 
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
+
 
 const HomePage = () => {
   return (
@@ -51,11 +53,17 @@ const HomePage = () => {
     
     <div class="element-container">
         <div class="element-boxHolder">
+
+
             <div class="box-content">
+
+
                 <div class="insides">
-                    <div class="element1">
-                        <div className="textsInElement">button
-                        </div>
+                    <div class="element1" >
+                    <Link to="/button" className="link">
+                        <div className="element">button</div>
+                    </Link>
+
                     </div>
                 </div>
             </div>
@@ -68,10 +76,9 @@ const HomePage = () => {
             <div class="box-content">
             <div class="insides">
                     <div className="element2">
-                
-                        <div className="textsInElement">on
-                        
-                        </div>
+                    <Link to="/toggle" className="link">
+                        <div className="textsInElement">on</div>
+                        </Link>
                         <div className="offdesign">
                         
                         </div>
@@ -81,6 +88,8 @@ const HomePage = () => {
         </div>
         <p class="shape-label">toggle</p>
     </div>
+    
+    <Link to="/inputbox">
     <div class="element-container">
         <div class="element-boxHolder">
             <div class="box-content">
@@ -105,6 +114,7 @@ const HomePage = () => {
         </div>
         <p class="shape-label">radio/checkbox</p>
     </div>
+    </Link>
     
     <div class="element-container">
         <div class="element-boxHolder">
