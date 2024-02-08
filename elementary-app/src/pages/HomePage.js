@@ -4,10 +4,10 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/images/elementary-red-logo.png';
-import selectElementImage from 'C:/Users/Miguel/Documents/GitHub/elementary/elementary-app/src/assets/images/select-element.png';
-import adjustElementImage from 'C:/Users/Miguel/Documents/GitHub/elementary/elementary-app/src/assets/images/adjust-element.png';
-import pasteElementImage from 'C:/Users/Miguel/Documents/GitHub/elementary/elementary-app/src/assets/images/paste-element.png';
-import enjoyElementImage from 'C:/Users/Miguel/Documents/GitHub/elementary/elementary-app/src/assets/images/enjoy.png';
+import selectElementImage from '../assets/images/select-element.png';
+import adjustElementImage from '../assets/images/adjust-element.png';
+import pasteElementImage from '../assets/images/paste-element.png';
+import enjoyElementImage from '../assets/images/enjoy.png';
 
 
 
@@ -202,13 +202,13 @@ const HomePage = () => {
 
 {/* <!------------------------- 2/3 SECTION end-------------------------> */}
 
-{/* <!------------------------- 3/3 SECTION start-------------------------> */}
+{/* <!------------------------- 3/3 SECTION start-------------------------> 
 <div class="themes-section">
     <div class="text-themes">
         <p class="elements-inner-text1">themes</p>
         <p class="elements-inner-text2">how do you want your design?</p>
     </div>
-    {/* <!-- BOX BOX BOX BOX--> */}
+    {/* <!-- BOX BOX BOX BOX--> 
     <div class="four-themes-skeleton">
         <div class="theme1">
             <div class="label-strip"></div>
@@ -227,7 +227,7 @@ const HomePage = () => {
     
 
 
-</div>
+</div> */}
 <div className="fourthsection">
     <div className="walkthrough-container">
         <div className="logo-sec">
