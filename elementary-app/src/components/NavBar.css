@@ -5,11 +5,14 @@
   padding-left: 0;
   margin-right: 0;
   box-sizing: border-box;
-  
+
 }
+
 .Logo {
-  max-width: 140px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 140px;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
 }
 
 
@@ -20,8 +23,10 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   font-family: 'Nunito', sans-serif;
-  margin: 0; /* Reset default margin */
-  padding: 0; /* Reset default padding */
+  margin: 0;
+  /* Reset default margin */
+  padding: 0;
+  /* Reset default padding */
   overflow: auto;
 }
 
@@ -33,7 +38,7 @@ nav {
   height: 80px;
   align-items: center;
   justify-content: space-between;
-  margin: 0; 
+  margin: 0;
   padding-left: 2%;
   padding-right: 2%;
 }
@@ -41,7 +46,7 @@ nav {
 
 
 nav ul {
-  
+
   list-style: none;
   display: flex;
   align-items: center;
@@ -49,7 +54,7 @@ nav ul {
   flex-wrap: nowrap;
   overflow: hidden;
   justify-content: space-between;
-  
+
 }
 
 nav li {
@@ -72,7 +77,7 @@ nav a {
   position: relative;
 }
 
-nav a:hover {
+nav a:hover button:hover {
   font-size: 22px;
   color: #B61B1B;
 }
@@ -92,23 +97,23 @@ nav a.active {
 .right-links {
   display: flex;
   flex-wrap: nowrap;
-  align-items: center;    
+  align-items: center;
   justify-content: space-between;
   display: inline-block;
 }
 
 nav .right-links {
   display: flex;
-  align-items: center;    
+  align-items: center;
   justify-content: flex-end;
 }
 
-nav .right-links a:hover {
+nav .right-links a:hover button:hover {
   color: #B61B1B;
   font-size: 22px;
 }
 
-nav a:after {
+nav a:after button:after {
   content: '';
   display: block;
   height: 2px;
@@ -123,19 +128,21 @@ nav a:after {
 }
 
 nav a:hover:after,
+nav button:hover:after,
 nav a:active:after,
 nav a.active:after {
   width: 70%;
   transform: translateX(-50%) scaleX(1);
 }
 
-nav .right-links a {
+nav .right-links a button {
   padding: 0 20px;
   text-decoration: none;
   font-family: 'Nunito', sans-serif;
   color: #282828;
   font-size: 18px;
-  align-items: center; /* Add this line */
+  align-items: center;
+  /* Add this line */
   white-space: nowrap;
   position: relative;
 }
@@ -152,17 +159,17 @@ nav .right-links .signin-button {
   padding-right: 30px;
 }
 
-nav .right-links a.sign-in:hover {
+nav .right-links a.sign-in:hover button.sign-in:hover {
   color: #B61B1B;
   font-size: 20px;
 }
 
-nav .right-links a:hover {
+nav .right-links a:hover button:hover {
   color: #B61B1B;
   font-size: 22px;
 }
 
-nav .right-links a:after {
+nav .right-links a:after button:after {
   content: '';
   display: block;
   height: 2px;
@@ -176,7 +183,7 @@ nav .right-links a:after {
   width: 0;
 }
 
-nav .right-links a.sign-in:after {
+nav .right-links a.sign-in:after button.sign-in:after {
   content: '';
   display: block;
   height: 2px;
@@ -206,7 +213,8 @@ nav .right-links .sign-up:active:after,
 nav .right-links .sign-up.active:after {
   width: 70%;
   transform: translateX(-50%) scaleX(1);
-  background-color: #B61B1B; /* Set the underline color */
+  background-color: #B61B1B;
+  /* Set the underline color */
 }
 
 /* Responsive styles using media queries */
@@ -216,4 +224,3 @@ nav .right-links .sign-up.active:after {
     align-items: flex-start;
   }
 }
-

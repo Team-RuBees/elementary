@@ -21,6 +21,7 @@ import TablePage from './pages/elements/TablePage';
 import ToggleButtonPage from './pages/elements/ToggleButtonPage';
 
 function App() {
+  
   return (  
     <div className='App'>
       <BrowserRouter>
