@@ -15,6 +15,9 @@ import LoaderPage from './pages/elements/LoaderPage';
 import TablePage from './pages/elements/TablePage';
 import ToggleButtonPage from './pages/elements/ToggleButtonPage';
 import CheckBox from './pages/elements/CheckBox';
+import AboutPage from './pages/AboutPage';
+import SettingsPage from './pages/SettingsPage';
+
 
 function App() {
   return (  
@@ -38,6 +41,8 @@ function App() {
           <Route path="/checkbox" element = {<CheckBox/>}/>
           <Route path="/table" element = {<TablePage/>}/>
           <Route path="/toggle" element = {<ToggleButtonPage/>}/>
+          <Route path="/about" element = {<AboutPage/>}/>
+          <Route path="/settings" element = {<SettingsPage/>}/>
 
         </Routes>
       </BrowserRouter>
