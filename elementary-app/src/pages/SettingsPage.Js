@@ -35,17 +35,17 @@ const SettingsPage = () => {
 
 
                 <div class="form-group-sections">
-                    <label for="address">Username</label>
+                    <span for="address">Username</span>
                     <input type="text" class="field" name="username" id="address" required="" fdprocessedid=""/>
                 </div>
                 
                 <div class="form-group-sections">
-                <label for="address">Name</label>
+                <span for="address">Name</span>
                 <input type="text" name="name" id="address" required="" fdprocessedid=""/>
                 </div>
 
                 <div class="form-group-sections">
-                <label for="address">Email</label>
+                <span for="address">Email</span>
                 <input type="text" name="email" id="address" required="" fdprocessedid=""/>
                 </div>
             </div>
