@@ -114,17 +114,12 @@ return (
 
         <div class="CustomSideBar">
         <ul>
-            <li><a href="button">button</a></li>
-            <li><a href="toggle">toggle</a></li>
-            <li><a href="radiobutton">radio button</a></li>
+        <li><a href="button">button</a></li>
+        <li><a href="toggle">toggle</a></li>
             <li><a href="inputbox">input box</a></li>
             <li><a href="cards">cards</a></li>
-            <li><a href="footer">footer</a></li>
-            <li><a href="navbar">navbar</a></li>
-            <li><a href="sidebar">sidebar</a></li>
+            <li><a href="checkbox">checkbox</a></li>
             <li><a href="table">table</a></li>
-            <li><a href="loader">loader</a></li>
-            <li><a href="form">form</a></li>
         </ul>
     </div>
     

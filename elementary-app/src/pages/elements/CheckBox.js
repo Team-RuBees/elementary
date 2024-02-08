@@ -23,6 +23,7 @@ const CheckBox = () => {
     const [dropShadowValue, setDropShadowValue] = useState(0);
     const [checkboxLabel, setCheckboxLabel] = useState('');
     const [showInput, setShowInput] = useState(''); // State for input text box visibility
+    
   
     // Update the generated HTML whenever relevant states change
     useEffect(() => {
@@ -39,6 +40,16 @@ const CheckBox = () => {
       dropShadowValue,
     ]);
   
+  
+
+  const copyCodeToClipboard = () => {
+    const el = document.createElement('textarea');
+    el.value = generatedHtml;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+};
     const handleCheckboxColorChange = (event) => {
       // Update checkbox color
       setCheckboxColor(event.target.value);
@@ -77,10 +88,6 @@ const CheckBox = () => {
     };
   
     // Handle border radius change
-    const handleBorderRadiusChange = (event) => {
-      // Update border radius
-      setBorderRadius(parseInt(event.target.value));
-    };
   
     return (
         
@@ -92,17 +99,12 @@ const CheckBox = () => {
 
         <div class="CustomSideBar">
         <ul>
-            <li><a href="button">button</a></li>
-            <li><a href="toggle">toggle</a></li>
-            <li><a href="radiobutton">radio button</a></li>
+        <li><a href="button">button</a></li>
+        <li><a href="toggle">toggle</a></li>
             <li><a href="inputbox">input box</a></li>
             <li><a href="cards">cards</a></li>
-            <li><a href="footer">footer</a></li>
-            <li><a href="navbar">navbar</a></li>
-            <li><a href="sidebar">sidebar</a></li>
+            <li><a href="checkbox">checkbox</a></li>
             <li><a href="table">table</a></li>
-            <li><a href="loader">loader</a></li>
-            <li><a href="form">form</a></li>
         </ul>
         </div>
 
@@ -143,14 +145,14 @@ const CheckBox = () => {
                     <li><label><input  type="checkbox" checked={isDropShadowChecked} onChange={() => handleCheckboxChange('dropShadow')} name="dropShadow"/> drop shadow</label></li>
                     <li><label><input type="checkbox" checked={isStrokeChecked} onChange={() => handleCheckboxChange('stroke')} name="stroke"/> label</label></li>                    
                 
-                    <li><label><input type="checkbox" name="label"/> stroke</label></li>
+                    <li><label> </label></li>
                     {isStrokeChecked && (
                 <>
                     <input
                     type="text"
                     value={checkboxLabel}
                     onChange={(e) => setCheckboxLabel(e.target.value)}
-                    style={{ marginLeft: '-150px' }}
+                    style={{ marginLeft: '10px', marginTop: '15px' }}
                     />
                     
                 </>
@@ -175,6 +177,9 @@ const CheckBox = () => {
             </div>
             <div class="generatedCode-container">
                 <p>{generatedHtml}</p>
+                <div className="copyCodeRectangle">
+                            <button className="copyCodeButton" onClick={copyCodeToClipboard}>Copy Code</button>
+                        </div>
             </div>
             </div>
             </div>
