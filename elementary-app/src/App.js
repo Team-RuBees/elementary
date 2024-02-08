@@ -16,9 +16,9 @@ import InputBoxPage from './pages/elements/InputBoxPage';
 import LoaderPage from './pages/elements/LoaderPage';
 import NavbarPage from './pages/elements/NavbarPage';
 import RadioButtonPage from './pages/elements/RadioButtonPage';
-import SidebarPage from './pages/elements/SidebarPage';
 import TablePage from './pages/elements/TablePage';
 import ToggleButtonPage from './pages/elements/ToggleButtonPage';
+import CheckBox from './pages/elements/CheckBox';
 
 function App() {
   return (  
@@ -42,7 +42,7 @@ function App() {
           <Route path="/loader" element = {<LoaderPage/>}/>
           <Route path="/navbar" element = {<NavbarPage/>}/>
           <Route path="/radiobutton" element = {<RadioButtonPage/>}/>
-          <Route path="/sidebar" element = {<SidebarPage/>}/>
+          <Route path="/checkbox" element = {<CheckBox/>}/>
           <Route path="/table" element = {<TablePage/>}/>
           <Route path="/toggle" element = {<ToggleButtonPage/>}/>
 
