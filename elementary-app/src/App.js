@@ -6,7 +6,7 @@ import SignUp from './pages/SignUp';
 import Footer from './components/Footer';
 import HelpPage from './pages/HelpPage';
 import AboutPage from './pages/AboutPage';
-
+import SettingsPage from './pages/SettingsPage';
 
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
           <Route path="/signup" element = {<SignUp/>} />
           <Route path="/help" element = {<HelpPage/>}/>
           <Route path="/about" element = {<AboutPage/>}/>
+          <Route path="/settings" element = {<SettingsPage/>}/>
           
         </Routes>
       </BrowserRouter>
