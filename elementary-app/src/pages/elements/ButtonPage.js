@@ -5,7 +5,6 @@ import Footer from '../../components/Footer';
 import CustomSideBar from '../../components/CustomSideBar';
 import '../../components/CustomSideBar.css';
 import { useState, useEffect, useRef } from 'react';
-import uploadIcon from '../../assets/images/upload-icon.png';
 
 
 
@@ -19,14 +18,17 @@ const ButtonPage = () => {
     const [isStrokeChecked, setStrokeChecked] = useState(false); 
     const [textSize, setTextSize] = useState(16);
     const [borderRadius, setBorderRadius] = useState(50); // Default border radius
+    const [showLabelInput, setShowLabelInput] = useState(true);
+    const [buttonText, setButtonText] = useState('Button');
 
     useEffect(() => {
         // Update the generated HTML
         const boxShadowStyle = isDropShadowChecked ? 'box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);' : '';
         const borderStyle = isStrokeChecked ? '2px solid black' : 'none';
-        const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; border-radius: ${borderRadius}px; font-size: ${textSize}px; ${boxShadowStyle} ${borderStyle}">button</button>`;
+        const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; 
+        border-radius: ${borderRadius}px; font-size: ${textSize}px; ${boxShadowStyle} ${borderStyle}">${buttonText}</button>`;
         setGeneratedHtml(htmlCode);
-    }, [buttonColor, textColor, isDropShadowChecked, isStrokeChecked, textSize, borderRadius]);
+    },  [buttonColor, textColor, isDropShadowChecked, isStrokeChecked, textSize, borderRadius, buttonText]);
     const handleButtonColorChange = (event) => {
       // Update button color
     setButtonColor(event.target.value);
@@ -45,7 +47,8 @@ const ButtonPage = () => {
         case 'stroke':
             setStrokeChecked(!isStrokeChecked);
             break;
-          // Add more cases for other checkboxes if needed
+        case 'label':
+              setShowLabelInput(!showLabelInput);
         default:
             break;
         }
@@ -54,6 +57,9 @@ const ButtonPage = () => {
     const handleBorderRadiusChange = (event) => {
         // Update border radius
         setBorderRadius(event.target.value);
+    };
+    const handleLabelInputChange = (event) => {
+      setButtonText(event.target.value); 
     };
 
     useEffect(() => {
@@ -72,36 +78,7 @@ const ButtonPage = () => {
         console.log(objStyle);
     }, []);
     
-    //image upload
-      const inputRef = useRef(null);
     
-      const handleImageUpload = () => {
-        // Trigger the file input
-        inputRef.current.click();
-      };
-    
-      const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = (event) => {
-            const backgroundImageUrl = event.target.result;
-            const otherButton = document.getElementById('btnPreview');
-    
-            // Log the retrieved button element
-            console.log(otherButton);
-    
-            // Check if the element is found before attempting to set its background
-            if (otherButton) {
-              otherButton.style.backgroundImage = `url(${backgroundImageUrl})`;
-            } else {
-              console.error('Button with ID "btnPreview" not found.');
-            }
-          };
-          reader.readAsDataURL(file);
-        }
-      };
-      
 return (
     
     <div>
@@ -146,27 +123,36 @@ return (
                     fontSize: `${textSize}px`,
                     boxShadow: isDropShadowChecked ? '0 0 10px rgba(0, 0, 0, 0.5)' : 'none',
                     border: isStrokeChecked ? '2px solid black' : 'none',
-                }}
-                >
-                button
-            </button>
+                  }}
+                  >
+                  {buttonText}
+              </button>
             </div>
             <div className="adjust">
                 <ul className="checkboxes">
                     <li><label><input  type="checkbox" checked={isDropShadowChecked} onChange={() => handleCheckboxChange('dropShadow')} name="dropShadow"/> drop shadow</label></li>
-                    <li><label><input type="checkbox" checked={isStrokeChecked} onChange={() => handleCheckboxChange('stroke')} name="stroke"/> stroke</label></li>                    <li><label><input type="checkbox" name="image"/> image </label>
-                    <li><input type="file"
-                      accept="image/*"
-                      ref={inputRef}
-                      style={{ display: 'none' }}
-                      onChange={handleFileChange}
-                    /> </li>
-                      <button className="uploadImageButton" onClick={handleImageUpload}>
-                      UPLOAD <img src={uploadIcon} alt="Icon Placeholder" className="iconPlaceholder" />
-                    </button>
-                    </li>
-                    <li><label><input type="checkbox" name="label"/> label</label></li>
-                </ul>
+                    <li><label><input type="checkbox" checked={isStrokeChecked} onChange={() => handleCheckboxChange('stroke')} name="stroke"/> stroke</label></li>
+                    <li>
+                      <label>
+                          <input  
+                              type="checkbox" 
+                              checked={showLabelInput} 
+                              onChange={() => handleCheckboxChange('label')} 
+                              name="label"
+                          /> 
+                          label
+                      </label>
+                      {showLabelInput && (
+                          <input
+                              id='inputLabel'
+                              type="text"
+                              value={buttonText}  // Assuming buttonText is your state for the input label value
+                              onChange={handleLabelInputChange}  // Assuming handleLabelInputChange is your change handler function
+                              placeholder="Enter button label"
+                          />
+                      )}
+                  </li>
+              </ul>
                     
                 <div class="sliders">
                     <label for="textSizeSlider">text size</label> <br/>
