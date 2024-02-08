@@ -98,27 +98,15 @@ const TogglePage = () => {
         inputRef.current.click();
     };
     
-    const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            const backgroundImageUrl = event.target.result;
-            const otherButton = document.getElementById('btnPreview');
-    
-            // Log the retrieved button element
-            console.log(otherButton);
-    
-            // Check if the element is found before attempting to set its background
-            if (otherButton) {
-            otherButton.style.backgroundImage = `url(${backgroundImageUrl})`;
-            } else {
-            console.error('Button with ID "btnPreview" not found.');
-            }
-        };
-        reader.readAsDataURL(file);
-        }
-};
+    const copyCodeToClipboard = () => {
+        const el = document.createElement('textarea');
+        el.value = generatedHtml;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    };
+
     
 return (
     
@@ -195,9 +183,15 @@ return (
                     />                
                 </div>
             </div>
+            
             <div class="generatedCode-container">
-                <p>{generatedHtml}</p>
+              <div className="copyCodeRectangle">
+                <button className="copyCodeButton" onClick={copyCodeToClipboard}>Copy Code</button>
+                          </div>
+                          <div className='generated-space'>
+                          <p>{generatedHtml}</p>            </div>
             </div>
+    
         </div>
     </div>
 

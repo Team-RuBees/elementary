@@ -9,9 +9,9 @@ import CustomizePage from './pages/CustomizePage'
 import CustomSideBar from './components/CustomSideBar';
 import ButtonPage from './pages/elements/ButtonPage';
 import CardsPage from './pages/elements/CardsPage';
-import FormPage from './pages/elements/FormPage';
+
 import InputBoxPage from './pages/elements/InputBoxPage';
-import LoaderPage from './pages/elements/LoaderPage';
+
 import TablePage from './pages/elements/TablePage';
 import ToggleButtonPage from './pages/elements/ToggleButtonPage';
 import CheckBox from './pages/elements/CheckBox';
@@ -33,9 +33,9 @@ function App() {
           {/* START OF ELEMENTS PAGE ROUTES */}
           <Route path="/button" element = {<ButtonPage/>}/>
           <Route path="/cards" element = {<CardsPage/>}/>
-          <Route path="/form" element = {<FormPage/>}/>
+        
           <Route path="/inputbox" element = {<InputBoxPage/>}/>
-          <Route path="/loader" element = {<LoaderPage/>}/>
+         
           <Route path="/checkbox" element = {<CheckBox/>}/>
           <Route path="/table" element = {<TablePage/>}/>
           <Route path="/toggle" element = {<ToggleButtonPage/>}/>

@@ -65,9 +65,22 @@ const CardPage = () => {
     
     return (
         <div>
-            <NavBar/>
+        <NavBar/>
+        <div className="content">
+           <div class="CustomSideBar">
+    <ul>
+    <li><a href="button">button</a></li>
+        <li><a href="toggle">toggle</a></li>
+        <li><a href="inputbox">input box</a></li>
+        <li><a href="cards">cards</a></li>
+        <li><a href="checkbox">checkbox</a></li>
+        <li><a href="table">table</a></li>
+       
+    </ul>
+</div>
+        
             <div className="content">
-                <CustomSideBar/>
+            
                 <div className="page_generator">
                     <div className="preview_container">
                         <div className="card" style={cardStyle}>
@@ -107,8 +120,14 @@ const CardPage = () => {
                         </div>
                     </div>
                 </div>
+
+                </div>
+                
+                
             </div>
+            
             <Footer/>
+        
         </div>
     );
 };

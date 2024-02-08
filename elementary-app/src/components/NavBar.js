@@ -25,7 +25,10 @@ const NavBar = () => {
                         <li><Link to="/home" class="home">home</Link></li>
                         <li><Link to="/button" class="CustomizePage">generate</Link></li>
                         <li><Link to="/help" class="home">support</Link></li>
-                        <li><Link to="/home" class="home">about</Link></li>
+                        <li><Link to="/about" class="AboutPage">about</Link></li>
+                        
+                        <li><Link to="/signup" class="signup">sign up</Link></li>
+                        <li><Link to="/login" class="login">sign in</Link></li>
                     </li>
 
                             {user ?
