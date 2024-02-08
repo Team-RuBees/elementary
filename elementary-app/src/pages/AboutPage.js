@@ -53,7 +53,7 @@ const AboutPage = () => {
                 />
           </div>
             
-          <p className="name">Mary Joyce Calangian</p>
+          <p className="name p-c">Mary Joyce Calangian</p>
         </div>
         <div className="team-member">
         <div class="center">
@@ -66,7 +66,7 @@ const AboutPage = () => {
                 borderRadius="50%"
                 />
           </div>
-          <p className="name">Trisha Camille Galicia</p>
+          <p className="name p-c">Trisha Camille Galicia</p>
         </div>
         <div className="team-member">
         <div class="center">
@@ -79,7 +79,7 @@ const AboutPage = () => {
                 borderRadius="50%"
                 />
           </div>
-          <p className="name">Aliza Ashly Glodoviza</p>
+          <p className="name p-c">Aliza Ashly Glodoviza</p>
         </div>
         <div className="team-member">
         <div class="center">
@@ -92,7 +92,7 @@ const AboutPage = () => {
                 borderRadius="50%"
                 />
           </div>
-          <p className="name">Acel Gabrielle Margallo</p>
+          <p className="name p-c">Acel Gabrielle Margallo</p>
         </div>
         <div className="team-member">
         <div class="center">
@@ -105,7 +105,7 @@ const AboutPage = () => {
                 borderRadius="50%"
                 />
           </div>
-          <p className="name">Uriel Ryan Reyles</p>
+          <p className="name p-c">Uriel Ryan Reyles</p>
         </div>
         <div className="team-member">
         <div class="center">
@@ -118,7 +118,7 @@ const AboutPage = () => {
                 borderRadius="50%"
                 />
           </div>
-          <p className="name">John Lawrence Trinidad</p>
+          <p className="name p-c">John Lawrence Trinidad</p>
         </div>
       </div>
 
