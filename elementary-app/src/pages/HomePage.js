@@ -2,11 +2,15 @@ import React from 'react';
 import '../assets/css/homePage.css'; 
 import NavBar from '../components/NavBar'; 
 import Footer from '../components/Footer';
+import { useLocation } from "react-router-dom";
 
 const HomePage = () => {
+    const location = useLocation();
+    const state = location.state;
+
   return (
     <div>
-    <NavBar />
+    <NavBar user={state}/>
 
         
       {<body>
