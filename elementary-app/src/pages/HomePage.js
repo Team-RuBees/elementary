@@ -5,6 +5,12 @@ import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
 import { useLocation } from "react-router-dom";
+import Logo from '../assets/images/elementary-red-logo.png';
+import selectElementImage from '../assets/images/select-element.png';
+import adjustElementImage from '../assets/images/adjust-element.png';
+import pasteElementImage from '../assets/images/paste-element.png';
+import enjoyElementImage from '../assets/images/enjoy.png';
+
 
 const HomePage = () => {
     const location = useLocation();

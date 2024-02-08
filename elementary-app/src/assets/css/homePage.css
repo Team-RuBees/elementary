@@ -179,6 +179,81 @@ body {
     transform: scale(1.09);
 }
 
+
+
+.element1,
+.element2,
+.element5,
+.element6,
+.element7 {
+    transition: background-color 1s, transform 1s; 
+
+}
+
+@keyframes colorChangeEnter {
+    0% { background-color: #F44040; } 
+    20% { background-color: #0022ff; } 
+    40% { background-color: #51ff00; } 
+    60% { background-color: #ffee00; } 
+    80% { background-color: #ff0099; } 
+    100% { background-color: #ff9500; } 
+}
+
+@keyframes colorChangeExit {
+    0% { background-color: #ff9500; } 
+    25% { background-color: #ff0099; } 
+    50% { background-color: #ffee00; } 
+    60% { background-color: #51ff00; }
+    75% { background-color: #0022ff; } 
+    100% { background-color: #F44040; } 
+}
+
+.element1:hover,
+.element2:hover, .element5:hover, .element6:hover, .element7:hover {
+    animation: colorChangeEnter 8s infinite; 
+    
+}
+
+.element1:not(:hover),
+.element2:not(:hover), .element5:not(:hover), .element6:not(:hover) ,.element7:not(:hover){
+    animation: colorChangeExit 4s forwards; 
+}
+.element1,
+.element2,
+.element5,
+.element6,
+.element7 {
+    transition: background-color 1s; 
+}
+
+@keyframes colorChangeEnter {
+    0% { background-color: #F44040; transform: scaleY(1); } 
+    10% { background-color: #F44040; transform: scaleY(1.5), scaleX(4); } 
+    25% { background-color: #0022ff; transform: scaleX(1.2); } 
+    45% { background-color: #51ff00; transform: scaleY(1.8); } 
+    60% { background-color: #ffee00; transform: scaleY(1.4); } 
+    80% { background-color: #ff0099; transform: scaleX(0.9); } 
+    100% { background-color: #ff9500; transform: scaleX(1); } 
+}
+
+.element1:hover,
+.element2:hover,
+.element5:hover,
+.element6:hover,
+.element7:hover {
+    cursor: pointer; 
+    animation: colorChangeEnter 8s infinite; 
+}
+.element1:not(:hover),
+.element2:not(:hover),
+.element5:not(:hover),
+.element6:not(:hover),
+.element7:not(:hover) {
+    transform: scale(1);
+}
+
+
+
 .shape-label {
     text-align: center;
     margin-top: 10px;
@@ -244,7 +319,7 @@ body {
 
 .theme1:hover {
     transform: translateX(-20px); 
-    cursor: pointer; /* Change cursor to pointer on hover */
+    cursor: pointer; 
 
 }
 
@@ -259,6 +334,74 @@ body {
     background-color: white;
     border-radius: 0 0 20px 20px; 
 }
+.element4{
+    position: relative;
+    margin-top: 34%;
+    margin-left: -27px;
+    width: 150px;
+    height: 100px;
+    border: 3px dashed #b76060;
+    background-color: white;
+    z-index: 1;
+    border-radius: 20px;
+
+}
+
+
+
+  
+
+.element4::before {
+    content: "type..."; 
+    text-align: left;
+    color: #8a8a8a; 
+    font-size: 13px; 
+    position: absolute;
+    padding-left: 20px; 
+    padding-top: 10px;
+    top: -25px;
+    left: 12px;
+    animation: typing 1s steps(14) forwards; 
+    width: 130px;
+    height: 87px;
+    border: 4.5px dashed #e44343;
+    background-color: white;
+    border-radius: 20px;
+    z-index: -1; 
+}
+@keyframes typing {
+    0% { content: "type..."; }
+    5% { content: "type.."; }
+    10% { content: "type."; }
+    15% { content: "type"; }
+    20% { content: "typ"; }
+    25% { content: "t"; }
+    30% { content: ""; }
+    37% { content: "H"; }
+    38% { content: "H"; }
+    44% { content: "He"; }
+    45% { content: "He"; }
+    47% { content: "He"; }
+    52% { content: "Hell"; }
+    60% { content: "Hell"; }
+    67% { content: "Hell"; }
+    71% { content: "Hello w"; }
+    76% { content: "Hello w"; }
+    82% { content: "Hello worl"; }
+    88% { content: "Hello worl"; }
+    95% { content: "Hello world!"; }
+    100% { content: "type..."; }
+    
+}
+
+.element4::before:hover {
+    animation: typing 4s steps(11) forwards, reverseTyping 4s steps(11) forwards; 
+}
+
+.element4:hover::before {
+    animation: none; 
+}
+
 
 .element-container {
     display: flex;
@@ -365,7 +508,6 @@ body {
     border-radius: 20px;
     box-shadow: 9px 8px 10px rgba(0, 0, 0, 0.1);
     justify-content: right;
-
 }
 
 .element5 {
@@ -411,6 +553,140 @@ body {
     border-radius: 15px 0px 0px 15px;
     background: #F44040;
 }
+.element8 {
+    z-index: 1;
+    margin-top: 38px;
+    margin-left: -106px;
+    width: 30px; 
+    height: 160px; 
+    background-color: #F44040; 
+  }
+  .element8A {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    margin-top: 85x;
+    width: 140px; 
+    height: 30px; 
+    background-color: #F44040; 
+  }
+
+
+  /* walk through section */
+
+/* walkthrough container */
+.walkthrough-container {
+    padding-top: 40px;
+    padding-bottom: 95px;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, auto);
+}
+
+/* logo section */
+.logo-sec {
+    padding-top: 75px;
+    width: 350px;
+    display: grid;
+    grid-template-rows: repeat(2fr, 2fr);
+    grid-template-columns: repeat(2fr, 2fr);
+    justify-items: right;
+}
+
+/* logo image */
+.Logoo {
+    height: 160px;
+    width: auto; 
+}
+
+/* walkthrough text */
+.walkthrough-text {
+    justify-self: center;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    height: 30px;
+    width: 140px;
+    margin-top: -67px;
+    margin-left: 126px;
+}
+
+.all-steps{
+    display: flex;
+}
+
+
+
+.paste-it{
+    width: 120px; 
+    height: 120px;
+
+}
+
+.number-circle{
+    position: absolute;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: -345px;
+}
+
+
+/* steps section */
+.steps-sec {
+    display: grid;
+    height: 360px;
+    grid-template-columns: repeat(4, 4fr);
+    gap: 5px; 
+    border: 7px solid #C12C2C;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-right: rgb(255, 255, 255);
+    background-color: white;
+    padding: 20px;
+}
+
+.steps-sec div {
+    padding: 10px; 
+}
+.sectioning{
+    display: grid;
+}
+.all-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.number-circle {
+    display: flex;
+    background-color: #A41415;
+    width: 70px;
+    height: 70px;
+    border-radius: 90px;
+}
+
+.title-sec {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+.select-element-image {
+    width: 140px; 
+    height: 140px;
+  }
+
+.desc{
+    text-align: left;
+    font-size: 14px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
 
 
 /* Responsive Styles using Media Queries */
