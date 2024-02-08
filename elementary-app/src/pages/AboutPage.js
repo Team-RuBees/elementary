@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { Component } from "react"
+import '../assets/css/aboutPage.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Logo from '../assets/images/elementary-red-logo.png';
+import ReactRoundedImage from "react-rounded-image"
+import calangian from '../assets/images/mary-joyce-calangian.jpg';
+import galicia from '../assets/images/trisha-camille-galicia.jpg';
+import glodoviza from '../assets/images/aliza-ashly-glodoviza.jpg';
+import margallo from '../assets/images/acel-gabrielle-margallo.jpg';
+import reyles from '../assets/images/uriel-ryan-reyles.png';
+import trinidad from '../assets/images/john-lawrence trinidad.png';
 
-import '../assets/css/aboutPage.css';
 
 const AboutPage = () => {
   return (
@@ -34,27 +41,83 @@ const AboutPage = () => {
       {/* Circles with names */}
       <div className="team-circles">
         <div className="team-member">
-          <div className="circle"></div>
+
+          <div class="center">
+          <ReactRoundedImage
+                image={calangian}
+                roundedColor="#000000" 
+                imageWidth="120"
+                imageHeight="120"
+                roundedSize="0"
+                borderRadius="50%"
+                />
+          </div>
+            
           <p className="name">Mary Joyce Calangian</p>
         </div>
         <div className="team-member">
-          <div className="circle"></div>
+        <div class="center">
+          <ReactRoundedImage
+                image={galicia}
+                roundedColor="#000000" 
+                imageWidth="120"
+                imageHeight="120"
+                roundedSize="0"
+                borderRadius="50%"
+                />
+          </div>
           <p className="name">Trisha Camille Galicia</p>
         </div>
         <div className="team-member">
-          <div className="circle"></div>
+        <div class="center">
+          <ReactRoundedImage
+                image={glodoviza}
+                roundedColor="#000000" 
+                imageWidth="120"
+                imageHeight="120"
+                roundedSize="0"
+                borderRadius="50%"
+                />
+          </div>
           <p className="name">Aliza Ashly Glodoviza</p>
         </div>
         <div className="team-member">
-          <div className="circle"></div>
+        <div class="center">
+          <ReactRoundedImage
+                image={margallo}
+                roundedColor="#000000" 
+                imageWidth="120"
+                imageHeight="120"
+                roundedSize="0"
+                borderRadius="50%"
+                />
+          </div>
           <p className="name">Acel Gabrielle Margallo</p>
         </div>
         <div className="team-member">
-          <div className="circle"></div>
+        <div class="center">
+          <ReactRoundedImage
+                image={reyles}
+                roundedColor="#000000" 
+                imageWidth="120"
+                imageHeight="120"
+                roundedSize="0"
+                borderRadius="50%"
+                />
+          </div>
           <p className="name">Uriel Ryan Reyles</p>
         </div>
         <div className="team-member">
-          <div className="circle"></div>
+        <div class="center">
+          <ReactRoundedImage
+                image={trinidad}
+                roundedColor="#000000" 
+                imageWidth="120"
+                imageHeight="120"
+                roundedSize="0"
+                borderRadius="50%"
+                />
+          </div>
           <p className="name">John Lawrence Trinidad</p>
         </div>
       </div>
