@@ -32,7 +32,18 @@ const TogglePage = () => {
         // Update the generated HTML
         const boxShadowStyle = isDropShadowChecked ? 'box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);' : '';
         const borderStyle = isStrokeChecked ? '2px solid black' : 'none';
-        const htmlCode = `<button style="color: ${textColor}; background: ${buttonColor}; border: 0 solid; border-radius: ${borderRadius}px; font-size: ${textSize}px; ${boxShadowStyle} ${borderStyle}">button</button>`;
+        const htmlCode = `
+        <label style="position: relative; display: inline-block; margin:8px; width: 100px; height: 48px; backgroundColor; ${buttonColor} : #ccc; borderRadius:32px">
+            <input type="checkbox" style="opacity: 0; width: 0; height: 0"/>
+        
+            <span style="position: absolute; cursor: pointer; padding: 8px ; margin: 4px; transition: .4s; 
+                color: ${textColor};
+                fontSize: ${textSize}px;
+                backgroundColor: #fff;
+                borderRadius: ${borderRadius}px;"
+            </span>
+        
+        </label>`;
         setGeneratedHtml(htmlCode);
         const element = toggleRef.current;
         const cssObj = window.getComputedStyle(element);
@@ -158,24 +169,6 @@ return (
 
             </div>
             <div className="adjust">
-                <ul className="checkboxes">
-                    <li><label><input  type="checkbox" checked={isDropShadowChecked} onChange={() => handleCheckboxChange('dropShadow')} name="dropShadow"/> drop shadow</label></li>
-                    <li><label><input type="checkbox" checked={isStrokeChecked} onChange={() => handleCheckboxChange('stroke')} name="stroke"/> stroke</label></li>                    
-                    <li><label><input type="checkbox" name="image"/> image </label>
-                    <li>
-                        <input type="file"
-                            accept="image/*"
-                            ref={inputRef}
-                            style={{ display: 'none' }}
-                            onChange={handleFileChange}
-                        />
-                    </li>
-                    <button className="uploadImageButton" onClick={handleImageUpload}>
-                    UPLOAD <img src={uploadIcon} alt="Icon Placeholder" className="iconPlaceholder" />
-                    </button>
-                    </li>
-                    <li><label><input type="checkbox" name="label"/> label</label></li>
-                </ul>
                     
                 <div class="sliders">
                     <label for="textSizeSlider">text size</label> <br/>
