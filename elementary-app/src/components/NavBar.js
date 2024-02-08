@@ -22,8 +22,8 @@ const NavBar = () => {
                 <div class="menu">
                     <ul class="list">
                         <li><Link to="/home" class="btn">home</Link></li>
-                        <li><Link to="/home" class="btn">generate</Link></li>
-                        <li><Link to="/home" class="btn">support</Link></li>
+                        <li><Link to="/button" class="btn">generate</Link></li>
+                        <li><Link to="/help" class="btn">support</Link></li>
                         <li><Link to="/about" class="btn">about</Link></li>
                         
                         <li><Link to="/signup" class="signup">sign up</Link></li>

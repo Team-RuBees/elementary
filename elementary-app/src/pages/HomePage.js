@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/css/homePage.css'; 
-import NavBar from '../components/NavBarLogin'; 
+import NavBar from '../components/NavBar'; 
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
