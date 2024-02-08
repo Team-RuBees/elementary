@@ -54,8 +54,9 @@ function SignUp() {
 
                             <div className="elementary-logo-holder">
                                 <img src={elementaryLogo} width="300px" alt="Elementary logo" />
-                                <p className="elementary-text-holder">Create stunning interfaces with just a few slides, drag, and ticks. Say goodbye to coding complexities and embrace simplicity at its best. With our library of pre-built UI elements, easily generate CSS code, customize with ease, and watch your design plus vision come alive instantly.
-    
+                                <p className="elementary-text-holder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Praesent tincidunt leo nisl, et varius justo tincidunt eget. 
+                                Pellentesque at sodales orci.
                                 </p>
                             </div>
                         </div>
