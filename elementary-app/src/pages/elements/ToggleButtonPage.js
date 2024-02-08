@@ -135,13 +135,8 @@ const ToggleButtonPage = () => {
                 </div>
             </div>
             <div class="generatedCode-container">
-            <div className="copyCodeRectangle">
-                            
-                            <button className="copyCodeButton">Copy Code</button>
-                        </div>
-                        <div className='generated-space'>
-                        <p>{generatedHtml}</p>
-                        </div>            </div>
+                <p>{generatedHtml}</p>
+            </div>
         </div>
     </div>
 

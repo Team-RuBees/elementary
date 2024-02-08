@@ -136,13 +136,8 @@ return (
                     <input type="range" id="columnCountSlider" min="1" max="10" value={tableColumnCount} onChange={(e) => setTableColumnCount(e.target.value)} />
                 </div>
             </div>
-            <div className="generatedCode-container">
-                        <div className="copyCodeRectangle">
-                            <button className="copyCodeButton">Copy Code</button>
-                        </div>
-                        <div className='generated-space'>
-                        <p>{generatedHtml}</p>
-                        </div>
+            <div class="generatedCode-container">
+                <p>{generatedHtml}</p>
             </div>
         </div>
     </div>
