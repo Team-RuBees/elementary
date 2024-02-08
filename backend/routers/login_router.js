@@ -1,17 +1,15 @@
-const express =require('express')
-const collection = require('../database')
+const express = require('express')
 const router = express.Router()
+const { User } = require('../models/user')
 
-router.post('/', async(req, res)=>{
-    const {email, password } = req.body
+router.post('/', async (req, res) => {
+    const { email, password } = req.body
 
     try {
-        const check = await collection.findOne({email:email})
-
-        if (check) {
+        const check = await User.findOne({ email: email });
+        if (check.email === email && check.password === password) {
             res.json("User Confirmed")
-            
-        } else { 
+        } else {
             res.json("Email not registered")
         }
     } catch (error) {
