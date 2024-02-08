@@ -178,25 +178,20 @@
                           onChange={handleTextColorChange} // Update the buttonColor state on change
                       /> 
 
-                      <label for="colorSlider">color</label> <br/>
-                      <input
-                          type="color"
-                          id="btnColorPicker"
-                          value={buttonColor} // Use the dynamic buttonColor state
-                          onChange={handleButtonColorChange} // Update the buttonColor state on change
-                      />                
-                  </div>
-              </div>
-              <div class="generatedCode-container">
-              <div className="copyCodeRectangle">
-                <button className="copyCodeButton" onClick={copyCodeToClipboard}>Copy Code</button>
-                          </div>
-                          <div className='generated-space'>
-                          <p>{generatedHtml}</p>            </div>
-                          </div>
-
-          </div>
-      </div>
+                    <label for="colorSlider">color</label> <br/>
+                    <input
+                        type="color"
+                        id="btnColorPicker"
+                        value={buttonColor} // Use the dynamic buttonColor state
+                        onChange={handleButtonColorChange} // Update the buttonColor state on change
+                    />                
+                </div>
+            </div>
+            <div class="generatedCode-container">
+                <p>{generatedHtml}</p>
+            </div>
+        </div>
+    </div>
 
 
 
