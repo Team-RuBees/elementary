@@ -146,8 +146,8 @@ return (
                           <input
                               id='inputLabel'
                               type="text"
-                              value={buttonText}  // Assuming buttonText is your state for the input label value
-                              onChange={handleLabelInputChange}  // Assuming handleLabelInputChange is your change handler function
+                              value={buttonText} 
+                              onChange={handleLabelInputChange}  
                               placeholder="Enter button label"
                           />
                       )}
