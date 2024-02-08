@@ -59,7 +59,14 @@ const TablePage = () => {
     setBorderWeight(event.target.value);
 };
 
-
+const copyCodeToClipboard = () => {
+    const el = document.createElement('textarea');
+    el.value = generatedHtml;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+};
 
 return (
     
@@ -135,7 +142,7 @@ return (
             </div>
             <div className="generatedCode-container">
                         <div className="copyCodeRectangle">
-                            <button className="copyCodeButton">Copy Code</button>
+                            <button className="copyCodeButton" onClick={copyCodeToClipboard}>Copy Code</button>
                         </div>
                         <div className='generated-space'>
                         <p>{generatedHtml}</p>
