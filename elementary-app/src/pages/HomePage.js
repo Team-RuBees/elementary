@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/css/homePage.css'; 
-import NavBar from '../components/NavBar'; 
+import NavBar from '../components/NavBarLogin'; 
 import Footer from '../components/Footer';
 
 const HomePage = () => {

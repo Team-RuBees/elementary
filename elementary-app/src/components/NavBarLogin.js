@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 
-const NavBar = () => {
+const NavBarLogin = () => {
     return (
       <div>
        
@@ -25,7 +25,7 @@ const NavBar = () => {
                         <li><Link to="/home" class="btn">generate</Link></li>
                         <li><Link to="/home" class="btn">support</Link></li>
                         <li><Link to="/about" class="btn">about</Link></li>
-                        <li><Link to="/home" class="btn">settings</Link></li>
+                        <li><Link to="/settings" class="btn">settings</Link></li>
                     </ul>
                 </div>
             </nav>        
@@ -36,6 +36,6 @@ const NavBar = () => {
     );
   };
   
-  export default NavBar;
+  export default NavBarLogin;
 
 
