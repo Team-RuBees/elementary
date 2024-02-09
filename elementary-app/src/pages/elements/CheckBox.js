@@ -160,25 +160,29 @@ const CheckBox = () => {
                 </ul>
                     
                 <div class="sliders">
-                    <label for="checkboxSlider">checkbox size</label> <br/>
+                    <label for="checkboxSlider">checkbox size</label>
                     <input type="range" id="textSizeSlider" min="12" max="100" value={checkboxSize}   
                     onChange={(e) => setCheckboxSize(e.target.value)}
                     />
+                    <br/>
 
                     
-                    <label for="colorSlider">color</label> <br/>
+                    <label for="colorSlider">color</label> 
                     <input
                         type="color"
                         id="btnColorPicker"
                         value={checkboxColor} // Use the dynamic buttonColor state
                         onChange={handleCheckboxColorChange} // Update the buttonColor state on change
-                    />                
+                    />  
+                    <br/>              
                 </div>
             </div>
-            <div class="generatedCode-container">
-                <p>{generatedHtml}</p>
-                <div className="copyCodeRectangle">
+            <div className="generatedCode-container">
+                        <div className="copyCodeRectangle">
                             <button className="copyCodeButton" onClick={copyCodeToClipboard}>Copy Code</button>
+                        </div>
+                        <div className='generated-space'>
+                        <p>{generatedHtml}</p>
                         </div>
             </div>
             </div>

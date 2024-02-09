@@ -89,22 +89,28 @@ const CardPage = () => {
                         <div className="sliders">
                             <label htmlFor="cardBgColorPicker">Background Color</label>
                             <input type="color" id="txtColorPicker" value={cardBgColor} onChange={handleCardBgColorChange} />
-                            
+                            <br/>
+
                             <label htmlFor="cardTextColorPicker">Text Color</label>
                             <input type="color" id="txtColorPicker" value={cardTextColor} onChange={handleCardTextColorChange} />
-                            
+                            <br/>
+
                             <label htmlFor="cardBorderRadiusSlider">Border Radius</label>
                             <input type="range" id="textSizeSlider" min="0" max="50" value={cardBorderRadius} onChange={handleCardBorderRadiusChange} />
-                            
+                            <br/>
+
                             <label htmlFor="cardPaddingSlider">Padding</label>
                             <input type="range" id="textSizeSlider" min="0" max="50" value={cardPadding} onChange={handleCardPaddingChange} />
-                            
+                            <br/>
+
                             <label htmlFor="cardWidthSlider">Width</label>
                             <input type="range" id="textSizeSlider" min="100" max="500" value={cardWidth} onChange={handleCardWidthChange} />
-                        
+                            <br/>
+
                             <label htmlFor="cardHeightSlider">Height</label>
                             <input type="range" id="textSizeSlider" min="100" max="500" value={cardHeight} onChange={handleCardHeightChange} />
-                        
+                            <br/>
+                            
                         </div>
                     </div>
                 <div className="generatedCode-container">

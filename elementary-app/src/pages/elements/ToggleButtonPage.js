@@ -97,6 +97,16 @@ const TogglePage = () => {
         // Trigger the file input
         inputRef.current.click();
     };
+
+    
+    const copyCodeToClipboard = () => {
+        const el = document.createElement('textarea');
+        el.value = generatedHtml;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    };
     
     const handleFileChange = (e) => {
         const file = e.target.files[0];
@@ -167,36 +177,53 @@ return (
             <div className="adjust">
                     
                 <div class="sliders">
-                    <label for="textSizeSlider">text size</label> <br/>
-                    <input type="range" id="textSizeSlider" min="4"
-                    max="50" value={textSize}  onChange={(e) => setTextSize(e.target.value)}
-                    />
+                    <div className='box'>
+                        <label for="textSizeSlider">text size</label>
+                        <input type="range" id="textSizeSlider" min="4"
+                        max="50" value={textSize}  onChange={(e) => setTextSize(e.target.value)}
+                        />
+                        <br/>
+                    </div>
                     
-                    <label for="borderRadiusSlider">border radius</label> <br/>
-                    <input type="range" id="borderRadiusSlider" min="0"
-                    max="100"
-                    value={borderRadius}
-                    onChange={(e) => setBorderRadius(e.target.value)}/>
+                    <div className='box'>
+                        <label for="borderRadiusSlider">border radius</label>
+                        <input type="range" id="borderRadiusSlider" min="0"
+                        max="100"
+                        value={borderRadius}
+                        onChange={(e) => setBorderRadius(e.target.value)}/>
+                        <br/>
+                    </div>
 
-                    <label>text color</label> <br/>
-                    <input
-                        type="color"
-                        id="txtColorPicker"
-                        value={textColor} // change textColor state
-                        onChange={handleTextColorChange} // Update the buttonColor state on change
-                    /> 
+                    <div className='box'>
+                        <label>text color</label>
+                        <input
+                            type="color"
+                            id="txtColorPicker"
+                            value={textColor} // change textColor state
+                            onChange={handleTextColorChange} // Update the buttonColor state on change
+                        />
+                        <br/>
+                    </div> 
 
-                    <label for="colorSlider">color</label> <br/>
-                    <input
-                        type="color"
-                        id="btnColorPicker"
-                        value={buttonColor} // Use the dynamic buttonColor state
-                        onChange={handleButtonColorChange} // Update the buttonColor state on change
-                    />                
+                    <div className='box'>
+                        <label for="colorSlider">color</label>
+                        <input
+                            type="color"
+                            id="btnColorPicker"
+                            value={buttonColor} // Use the dynamic buttonColor state
+                            onChange={handleButtonColorChange} // Update the buttonColor state on change
+                        />   
+                        <br/>
+                    </div>              
                 </div>
             </div>
-            <div class="generatedCode-container">
-                <p>{generatedHtml}</p>
+            <div className="generatedCode-container">
+                        <div className="copyCodeRectangle">
+                            <button className="copyCodeButton" onClick={copyCodeToClipboard}>Copy Code</button>
+                        </div>
+                        <div className='generated-space'>
+                        <p>{generatedHtml}</p>
+                        </div>
             </div>
         </div>
     </div>

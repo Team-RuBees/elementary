@@ -11,7 +11,7 @@
     max-height: 100vh;
     min-height: 1px;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 .background{

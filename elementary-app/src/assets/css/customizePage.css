@@ -85,9 +85,18 @@ body{
     list-style-type: none;
     columns: 2;
     -webkit-columns: 2; /* For older versions of some browsers */
-    padding-left: 7%;
-    padding-top: 7%;
+    padding: 7%;
+    padding: 7%;
     font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.box{
+    display: flex;
+    padding: 0;
+    flex-direction: column;
 }
 
 .inputLabel {
@@ -103,6 +112,12 @@ label {
     font-size: 1rem; /* Change the font size as needed */
     font-weight: 400; /* Change the font weight (e.g., normal, bold) */
     color: #000000;
+    display: flex;
+}
+
+.container-input{
+    display: flex;
+    padding: 1.5rem;
 }
 
 #textSizeSlider, #borderRadiusSlider {

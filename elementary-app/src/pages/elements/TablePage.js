@@ -111,14 +111,16 @@ return (
 
             <div className="adjust">
                 <div class="sliders">
-                    <label for="rowCountSlider">Rows</label> <br/>
+                    <label for="rowCountSlider">Rows</label>
                     <input type="range" id="textSizeSlider" min="1" max="10" value={tableRowCount} onChange={(e) => setTableRowCount(e.target.value)} />
+                    <br/>
 
-                    <label for="columnCountSlider">Columns</label> <br/>
+                    <label for="columnCountSlider">Columns</label>
                     <input type="range" id="borderRadiusSlider" min="1" max="10" value={tableColumnCount} 
                     onChange={(e) => setTableColumnCount(e.target.value)} />
+                    <br/>
 
-                    <label htmlFor="borderWeightSlider">Border Weight</label> <br />
+                    <label htmlFor="borderWeightSlider">Border Weight</label>
                     <input type="range" 
                             id="textSizeSlider" 
                             min="1" 
@@ -126,13 +128,15 @@ return (
                             value={borderWeight} 
                             onChange={handleBorderWeightChange} 
                         />
+                    <br/>
 
                     <label htmlFor="tableLineColorPicker">Border Color</label>
                     <input type="color" id="txtColorPicker" value={tableLineColor} onChange={handleTableLineColorChange} />
-                    
+                    <br/>
+
                     <label htmlFor="tableeBgColorPicker">Background Color</label>
                     <input type="color" id='btnColorPicker' value={tableBgColor} onChange={handleTableBgColorChange} />
-                    
+                    <br/>
                 </div>
             </div>
             <div className="generatedCode-container">

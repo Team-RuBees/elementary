@@ -91,6 +91,7 @@ const InputBoxPage = () => {
                             value={inputTextColor} 
                             onChange={handleInputTextColorChange} 
                         />
+                        <br/>
                         
                         <label htmlFor="inputBgColorPicker">Background Color</label>
                         <input 
@@ -99,6 +100,7 @@ const InputBoxPage = () => {
                             value={inputBgColor} 
                             onChange={handleInputBgColorChange} 
                         />
+                        <br/>
                         
                         <label htmlFor="borderWeightSlider">Border Weight</label>
                         <input 
@@ -109,6 +111,7 @@ const InputBoxPage = () => {
                             value={borderWeight} 
                             onChange={handleBorderWeightChange} 
                         />
+                        <br/>
 
                         <label htmlFor="borderRadiusSlider">Border Radius</label>
                         <input 
@@ -119,6 +122,7 @@ const InputBoxPage = () => {
                             value={borderRadius} 
                             onChange={handleBorderRadiusChange} 
                         />
+                        <br/>
 
                         <label htmlFor="inputWidthSlider">Input Width</label>
                         <input 
@@ -129,8 +133,9 @@ const InputBoxPage = () => {
                             value={inputWidth} 
                             onChange={handleInputWidthChange} 
                         />
+                        <br/>
 
-                        <label for="inputHeightSlider">Height</label> <br/>
+                        <label for="inputHeightSlider">Height</label>
                         <input 
                             type="range" 
                             id="textSizeSlider" 
@@ -139,6 +144,7 @@ const InputBoxPage = () => {
                             value={inputHeight} 
                             onChange={handleInputHeightChange} 
                         />
+                        <br/>
                     </div>
                 </div>
                     <div className="generatedCode-container">

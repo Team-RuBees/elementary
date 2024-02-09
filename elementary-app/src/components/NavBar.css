@@ -92,11 +92,11 @@ nav {
     gap: 25px;
   }
   
-  #toggler, label{
+  #toggler, h4{
   display: none;
   }
 
-  label i{
+  h4 i{
   color: #282828;;
   }
 
@@ -107,7 +107,7 @@ nav {
   max-height: 0;
   overflow: hidden;
   }
-  label{
+  h4{
   display: inline-flex;
   }
   #toggler:checked~.menu{
@@ -128,7 +128,7 @@ nav {
   max-height: 0;
   overflow: hidden;
   }
-  label{
+  h4{
   display: inline-flex;
   }
   #toggler:checked~.menu{

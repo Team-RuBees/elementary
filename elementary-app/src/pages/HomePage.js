@@ -194,9 +194,6 @@ const HomePage = () => {
     </div>
 </div>
 
-<div class="see-more-text">
-    <div class="see-more-text1"> see more &rarr;</div>
-</div>
 
 
 

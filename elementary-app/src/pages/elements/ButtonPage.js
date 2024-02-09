@@ -87,6 +87,7 @@
           console.log(objStyle);
       }, []);
       
+   
       
   return (
       
@@ -153,42 +154,63 @@
                                 value={buttonText} 
                                 onChange={handleLabelInputChange}  
                                 placeholder="Enter button label"
+                                className='container-input'
                             />
                         )}
                     </li>
                 </ul>
                       
                   <div class="sliders">
-                      <label for="textSizeSlider">text size</label> <br/>
+
+                    <div className='box'>
+                        <label for="textSizeSlider">text size</label> 
                       <input type="range" id="textSizeSlider" min="8"
                       max="50" value={textSize}  onChange={(e) => setTextSize(e.target.value)}
                       />
-                          
-                      <label for="borderRadiusSlider">border radius</label> <br/>
-                      <input type="range" id="borderRadiusSlider" min="0"
-                      max="100"
-                      value={borderRadius}
-                      onChange={(e) => setBorderRadius(e.target.value)}/>
+                      <br/>
+                    </div>
 
-                      <label>text color</label> <br/>
-                      <input
-                          type="color"
-                          id="txtColorPicker"
-                          value={textColor} // change textColor state
-                          onChange={handleTextColorChange} // Update the buttonColor state on change
-                      /> 
+                    <div className='box'>
+                        <label for="borderRadiusSlider">border radius</label>
+                        <input type="range" id="borderRadiusSlider" min="0"
+                        max="100"
+                        value={borderRadius}
+                        onChange={(e) => setBorderRadius(e.target.value)}/>
+                    <br/>
+                    </div>
+                    
+                    <div className='box'>
+                        <label>text color</label>
+                        <input
+                            type="color"
+                            id="txtColorPicker"
+                            value={textColor} // change textColor state
+                            onChange={handleTextColorChange} // Update the buttonColor state on change
+                        /> 
+                    <br/>
+                    </div>
 
-                    <label for="colorSlider">color</label> <br/>
+                    <div className='box'>
+                    <label for="colorSlider">color</label>
                     <input
                         type="color"
                         id="btnColorPicker"
                         value={buttonColor} // Use the dynamic buttonColor state
                         onChange={handleButtonColorChange} // Update the buttonColor state on change
-                    />                
+                    />   
+                    <br/>
+                    </div>
+
+                                 
                 </div>
             </div>
-            <div class="generatedCode-container">
-                <p>{generatedHtml}</p>
+            <div className="generatedCode-container">
+                        <div className="copyCodeRectangle">
+                            <button className="copyCodeButton" onClick={copyCodeToClipboard}>Copy Code</button>
+                        </div>
+                        <div className='generated-space'>
+                        <p>{generatedHtml}</p>
+                        </div>
             </div>
         </div>
     </div>

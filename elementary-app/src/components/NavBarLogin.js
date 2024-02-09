@@ -14,9 +14,9 @@ const NavBarLogin = () => {
             <nav>
                 <img src={Logo} alt="Logo" className="Logo"/>
 
-                    <label class="none" for="toggler">
+                    <h4 class="none" for="toggler">
                         <FontAwesomeIcon icon={faBars} />
-                    </label>
+                    </h4>
                 <input type="checkbox" id="toggler" name=""/>
                 
                 <div class="menu">
