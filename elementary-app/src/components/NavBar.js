@@ -39,28 +39,17 @@ const NavBar = () => {
                 <Link to="/about" className="btn"> about</Link>
               </li>
               {user ? (
-                <li className="nav-right-container right-links">
-                  <li>
-                    <Link>
-                      <p>{user}</p> </Link>
+                <li className="nav-right-container right-links"> <li><Link>
+                <p>{user}</p> </Link>
                   </li>
                   <li>
-                    <button
-                      className="signin-button" onClick={handleLogout}
-                    >
-                      Logout
-                    </button>
+                    <button className="signin-button" onClick={handleLogout}>Logout</button>
                   </li>
                 </li>
               ) : (
                 <>
-                  <li>
-                    <Link to="/signup" className="signup"> sign up </Link>
-                  </li>
-                  <li>
-                    <Link to="/login" className="login">
-                      sign in
-                    </Link>
+                  <li><Link to="/signup" className="signup"> sign up </Link> </li>
+                  <li><Link to="/login" className="login">sign in</Link>
                   </li>
                 </>
               )}
