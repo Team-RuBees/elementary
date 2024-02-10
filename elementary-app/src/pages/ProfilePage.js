@@ -5,9 +5,21 @@ import Footer from '../components/Footer';
 import Logo from '../assets/images/elementary-red-logo.png';
 import ReactRoundedImage from "react-rounded-image"
 import ProfileImage from '../assets/images/profile-image.jpg';
+import { Link, useNavigate } from 'react-router-dom';
+import { getCookie, isCookieExpired, removeCookie } from '../utils/cookies';
 
 const ProfilePage = () => {
+
+    const navigate = useNavigate();
+    const user = getCookie("name");
+    const handleLogout = () => {
+        removeCookie("name");
+        navigate("/login");
+      };
+
     return (
+
+        
         <div>
         <NavBarLogin />
     
@@ -56,15 +68,9 @@ const ProfilePage = () => {
 
             <div class="form-group">
                 <div class="form-group-sections">
-                    <button type="button" class="btn-save btn-save-ss">Edit</button>
-                </div>
-                <div class="form-group-sections">
-                    <button type="button" class="btn-logout">Logout</button>
-                </div>
-            </div>
-
-            
-            
+                    <button type="button" class="btn-save btn-save-ss"  onClick={handleLogout}>Logout</button>
+                </div>                
+            </div>         
         </div>
     </div>
 

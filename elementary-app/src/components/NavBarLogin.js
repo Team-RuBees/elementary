@@ -33,7 +33,6 @@ const NavBarLogin = () => {
                         <li><Link to="/home" class="btn">generate</Link></li>
                         <li><Link to="/home" class="btn">support</Link></li>
                         <li><Link to="/about" class="btn">about</Link></li>
-                        <li><Link to="/settings" class="btn">settings</Link></li>
                     </ul>
                 </div>
             </nav>        

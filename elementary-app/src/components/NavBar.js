@@ -39,12 +39,12 @@ const NavBar = () => {
                 <Link to="/about" className="btn"> about</Link>
               </li>
               {user ? (
-                <li className="nav-right-container right-links"> <li><Link>
-                <p>{user}</p> </Link>
-                  </li>
-                  <li>
+                <li className="nav-right-container right-links"> <li>
+                  <Link to="/setting" className="btn"> <p>{user}</p> </Link></li>
+                  
+                   {/* <li>
                     <button className="signin-button" onClick={handleLogout}>Logout</button>
-                  </li>
+                  </li>  */}
                 </li>
               ) : (
                 <>
