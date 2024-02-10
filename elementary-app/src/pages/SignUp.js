@@ -75,17 +75,17 @@ function SignUp(){
 
                                 <form onSubmit={submit}>
                                     <div className="form__group field">
-                                        <input onChange={(e) => setName(e.target.value)} type="input" className="form__field" placeholder="Name" name="name" id='name' required />
+                                        <input onChange={(e) => setName(e.target.value)} type="name" className="form__field" placeholder="Name" name="name" id='name' required />
                                         <label for="name" className="form__label">Name</label>
                                     </div>
 
                                     <div className="form__group field">
-                                        <input onChange={(e) => setEmail(e.target.value)} type="input" className="form__field" placeholder="Email" email="email" id='email' required />
+                                        <input onChange={(e) => setEmail(e.target.value)} type="email" className="form__field" placeholder="Email" email="email" id='email' required />
                                         <label for="email" className="form__label">Email</label>
                                     </div>
 
                                     <div className="form__group field">
-                                        <input onChange={(e) => setPassword(e.target.value)} type="input" className="form__field" placeholder="Password" password="password" id='password' required />
+                                        <input onChange={(e) => setPassword(e.target.value)} type="password" className="form__field" placeholder="Password" password="password" id='password' required />
                                         <label for="password" className="form__label">Password</label>
                                     </div>
 
