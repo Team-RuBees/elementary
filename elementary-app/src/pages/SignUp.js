@@ -37,7 +37,7 @@ function SignUp(){
 
   return (
     <div>
-        <div className="body background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
+        <div className="background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
 
 
             <div className="sign-up-parent-container">
