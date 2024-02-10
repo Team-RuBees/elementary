@@ -42,7 +42,7 @@ function App() {
           <Route path="/table" element = {<TablePage/>}/>
           <Route path="/toggle" element = {<ToggleButtonPage/>}/>
           <Route path="/about" element = {<AboutPage/>}/>
-          <Route path="/setting" element = {<ProfilePage/>}/>
+          <Route path="/settings" element = {<ProfilePage/>}/>
 
         </Routes>
       </BrowserRouter>
