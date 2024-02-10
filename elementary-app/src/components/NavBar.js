@@ -40,7 +40,7 @@ const NavBar = () => {
               </li>
               {user ? (
                 <li className="nav-right-container right-links"> <li>
-                  <Link to="/setting" className="btn"> <p>{user}</p> </Link></li>
+                  <Link to="/settings" className="btn"> <p>{user}</p> </Link></li>
                   
                    {/* <li>
                     <button className="signin-button" onClick={handleLogout}>Logout</button>
