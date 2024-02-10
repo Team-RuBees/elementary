@@ -14,6 +14,9 @@ const ProfilePage = () => {
             
           {<body>
     <div class="parent-container">
+        <br/>
+        <br/>
+
         <h1 class="title">
             Profile
         </h1>
@@ -30,36 +33,14 @@ const ProfilePage = () => {
             />
         </div>
 
-        <div class="child-container-middle">
-            <div class="form-group">
+        <br/>
+        <br/>
 
-
-                <div class="form-group-sections">
-                    <span for="address">Username</span>
-                    <input type="text" class="field" name="username" id="address" required="" fdprocessedid=""/>
-                </div>
-                
-                <div class="form-group-sections">
-                <span for="address">Name</span>
-                <input type="text" name="name" id="address" required="" fdprocessedid=""/>
-                </div>
-
-                <div class="form-group-sections">
-                <span for="address">Email</span>
-                <input type="text" name="email" id="address" required="" fdprocessedid=""/>
-                </div>
-            </div>
-        </div>
-
-        
         <div class="child-container-bottom">
 
             <div class="form-group">
                 <div class="form-group-sections">
-                    <button type="button" class="btn-save btn-save-ss">Edit</button>
-                </div>
-                <div class="form-group-sections">
-                    <button type="button" class="btn-logout">Logout</button>
+                    <button type="button" class="btn-logout btn-logout-ss">Logout</button>
                 </div>
             </div>
 
