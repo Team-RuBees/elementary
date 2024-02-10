@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../assets/css/homePage.css'; 
 import NavBar from '../components/NavBar'; 
 import Footer from '../components/Footer';
@@ -15,6 +15,15 @@ import { useLocation } from "react-router-dom";
 const HomePage = () => {
     const location = useLocation();
     const state = location.state;
+
+    useEffect(() => {
+        const element1 = document.querySelector('.element1');
+        if (element1) {
+          element1.addEventListener('click', () => {
+            window.location.href = '/button'; // Replace '/button' with the URL of the page you want to navigate to
+          });
+        }
+      }, []);
   return (
     <div>
         <NavBar user={state}/>
@@ -59,35 +68,33 @@ const HomePage = () => {
 </div>
 
 <div class="firstContainer-elements-grid">
-    
+
+    <Link to="/button" >
     <div class="element-container">
         <div class="element-boxHolder">
-
-
             <div class="box-content">
-
-
                 <div class="insides">
-                    <div class="element1" >
-                    <Link to="/button" className="link">
-                        <div className="element">button</div>
-                    </Link>
-
+                    <div class="element1">
+                        <div className="textsInElement">button
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <p class="shape-label">button</p>
     </div>
+    </Link>
     
+    <Link to="/toggle" >
     <div class="element-container">
         <div class="element-boxHolder">
             <div class="box-content">
             <div class="insides">
                     <div className="element2">
-                    <Link to="/toggle" className="link">
-                        <div className="textsInElement">on</div>
-                        </Link>
+                
+                        <div className="textsInElement">on
+                        
+                        </div>
                         <div className="offdesign">
                         
                         </div>
@@ -97,8 +104,9 @@ const HomePage = () => {
         </div>
         <p class="shape-label">toggle</p>
     </div>
-    
-    <Link to="/inputbox">
+    </Link>
+
+    <Link to="/checkbox" >
     <div class="element-container">
         <div class="element-boxHolder">
             <div class="box-content">
@@ -125,6 +133,7 @@ const HomePage = () => {
     </div>
     </Link>
     
+    <Link to="/inputbox" >
     <div class="element-container">
         <div class="element-boxHolder">
             <div class="box-content"></div>
@@ -137,36 +146,16 @@ const HomePage = () => {
         </div>
         <p class="shape-label">input box</p>
     </div>
+    </Link>
+    
+
+
+
     <div class="secondContainer-elements-grid">
-        <div class="element-container">
-            <div class="element-boxHolder">
-                <div class="box-content">
-                    <div class="insides">
-                        <div className="element5">
-                            <div class="mockup_logos">
-                            f G in
-                            </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <p class="shape-label">footer</p>
-        </div>
+   
+    
         
-        <div class="element-container">
-            <div class="element-boxHolder">
-                <div class="box-content">
-                <div class="insides">
-                    <div class="element6">
-                        <div className="textsInElement">home
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <p class="shape-label">navbar</p>
-        </div>
-        
+        <Link to="/cards" >
         <div class="element-container">
             <div class="element-boxHolder">
                 <div class="box-content">
@@ -178,8 +167,11 @@ const HomePage = () => {
                 </div>
                 </div>
             </div>
-            <p class="shape-label">side menu/bar</p>
+            <p class="shape-label">cards</p>
         </div>
+        </Link>
+
+        <Link to="/table" >
         <div class="element-container">
             <div class="element-boxHolder">
                 <div class="box-content">
@@ -194,8 +186,10 @@ const HomePage = () => {
             </div>
             <p class="shape-label">table</p>
         </div>
+        </Link>
     </div>
 </div>
+
 
 
 

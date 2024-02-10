@@ -27,7 +27,7 @@ const ProfilePage = () => {
           {<body>
     <div class="parent-container">
         <h1 class="title">
-            Profile
+            {user}
         </h1>
 
         <div class="child-container-top">            
@@ -43,24 +43,7 @@ const ProfilePage = () => {
         </div>
 
         <div class="child-container-middle">
-            <div class="form-group">
-
-
-                <div class="form-group-sections">
-                    <span for="address">Username</span>
-                    <input type="text" class="field" name="username" id="address" required="" fdprocessedid=""/>
-                </div>
-                
-                <div class="form-group-sections">
-                <span for="address">Name</span>
-                <input type="text" name="name" id="address" required="" fdprocessedid=""/>
-                </div>
-
-                <div class="form-group-sections">
-                <span for="address">Email</span>
-                <input type="text" name="email" id="address" required="" fdprocessedid=""/>
-                </div>
-            </div>
+     
         </div>
 
         
