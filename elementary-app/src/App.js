@@ -26,23 +26,23 @@ function App() {
         <Routes>
           <Route index element = {<Home/>} />
           <Route path="/home" element = {<Home/>} />
-          <Route path="/login" element = {<Login/>} />
-          <Route path="/signup" element = {<SignUp/>} />
-          <Route path="/help" element = {<HelpPage/>}/>
           <Route path="/customize" element = {<CustomizePage/>}/>
+          <Route path="/help" element = {<HelpPage/>}/>
+          <Route path="/about" element = {<AboutPage/>}/>
+          <Route path="/signup" element = {<SignUp/>} />
+          <Route path="/login" element = {<Login/>} />
+          <Route path="/settings" element = {<ProfilePage/>}/>
           <Route path="/customsidebar" element = {<CustomSideBar/>}/>
 
           {/* START OF ELEMENTS PAGE ROUTES */}
           <Route path="/button" element = {<ButtonPage/>}/>
-          <Route path="/cards" element = {<CardsPage/>}/>
-          <Route path="/form" element = {<FormPage/>}/>
+          <Route path="/toggle" element = {<ToggleButtonPage/>}/>
           <Route path="/inputbox" element = {<InputBoxPage/>}/>
-          <Route path="/loader" element = {<LoaderPage/>}/>
+          <Route path="/cards" element = {<CardsPage/>}/>
           <Route path="/checkbox" element = {<CheckBox/>}/>
           <Route path="/table" element = {<TablePage/>}/>
-          <Route path="/toggle" element = {<ToggleButtonPage/>}/>
-          <Route path="/about" element = {<AboutPage/>}/>
-          <Route path="/settings" element = {<ProfilePage/>}/>
+          <Route path="/loader" element = {<LoaderPage/>}/>
+          <Route path="/form" element = {<FormPage/>}/>
 
         </Routes>
       </BrowserRouter>
