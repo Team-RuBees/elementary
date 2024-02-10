@@ -39,7 +39,7 @@ function SignUp(){
 
   return (
     <div>
-        <div className="body background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
+        <div className="background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
 
 
             <div className="sign-up-parent-container">
@@ -57,9 +57,9 @@ function SignUp(){
 
                         <div className="elementary-logo-holder">
                             <img src={elementaryLogo} width="300px" alt="Elementary logo"/>
-                            <p className="elementary-text-holder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Praesent tincidunt leo nisl, et varius justo tincidunt eget. 
-                                Pellentesque at sodales orci.
+                            <p className="elementary-text-holder">Welcome to stress-free design! 
+                                With our pre-built UI elements, creating stunning interfaces is effortless. 
+                                Customize with ease and watch your vision come alive instantly!
                             </p>
                         </div>
                     </div>
