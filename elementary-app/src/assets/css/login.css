@@ -15,8 +15,12 @@
 }
 
 .background{
+    background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;  
+    height: 100vh;
+    display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 .login-parent-container{

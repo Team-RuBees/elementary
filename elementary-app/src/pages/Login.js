@@ -33,8 +33,8 @@ function Login() {
         }
     }
   return (
-
-        <div className="body background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
+    <div>
+        <div className="background" style ={ { backgroundImage: 'url(' + require('../assets/images/login-background-image.png') + ')' } }>  
 
 
             <div className="login-parent-container">
@@ -112,7 +112,7 @@ function Login() {
             </div>
 
         </div>
-
+    </div>
   );
 };
 
