@@ -57,6 +57,7 @@ const HomePage = () => {
 
 <div class="firstContainer-elements-grid">
     
+    <Link to="/button">
     <div class="element-container">
         <div class="element-boxHolder">
 
@@ -76,7 +77,9 @@ const HomePage = () => {
         </div>
         <p class="shape-label">button</p>
     </div>
+    </Link>
     
+    <Link to="/toggle">
     <div class="element-container">
         <div class="element-boxHolder">
             <div class="box-content">
@@ -94,8 +97,9 @@ const HomePage = () => {
         </div>
         <p class="shape-label">toggle</p>
     </div>
+    </Link>
     
-    <Link to="/inputbox">
+    <Link to="/checkbox">
     <div class="element-container">
         <div class="element-boxHolder">
             <div class="box-content">
@@ -122,6 +126,7 @@ const HomePage = () => {
     </div>
     </Link>
     
+    <Link to="/inputbox">
     <div class="element-container">
         <div class="element-boxHolder">
             <div class="box-content"></div>
@@ -134,7 +139,11 @@ const HomePage = () => {
         </div>
         <p class="shape-label">input box</p>
     </div>
+    </Link>
+
     <div class="secondContainer-elements-grid">
+
+        <Link to="/button">
         <div class="element-container">
             <div class="element-boxHolder">
                 <div class="box-content">
@@ -149,7 +158,9 @@ const HomePage = () => {
             </div>
             <p class="shape-label">footer</p>
         </div>
+        </Link>
         
+        <Link to="/button">
         <div class="element-container">
             <div class="element-boxHolder">
                 <div class="box-content">
@@ -163,7 +174,9 @@ const HomePage = () => {
             </div>
             <p class="shape-label">navbar</p>
         </div>
-        
+        </Link>
+
+        <Link to="/button">
         <div class="element-container">
             <div class="element-boxHolder">
                 <div class="box-content">
@@ -177,6 +190,9 @@ const HomePage = () => {
             </div>
             <p class="shape-label">side menu/bar</p>
         </div>
+        </Link>
+
+        <Link to="/table">
         <div class="element-container">
             <div class="element-boxHolder">
                 <div class="box-content">
@@ -191,6 +207,7 @@ const HomePage = () => {
             </div>
             <p class="shape-label">table</p>
         </div>
+        </Link>
     </div>
 </div>
 
